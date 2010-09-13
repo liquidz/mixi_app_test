@@ -40,11 +40,13 @@ MyApp.init = function(){
 		Tadashii.createCanvas("#target");
 		MyApp.redraw();
 		$("#add").bind("click", function(){
+			alert("step = " + MyApp.step);
 			MyApp.step++;
 			if(MyApp.step > 5){ MyApp.step = 0; }
 			var req = opensocial.newDataRequest();
 			req.add(req.newUpdatePersonAppDataRequest(opensocial.IdSpec.PersonId.VIEWER, "comment", msg), "response");
 			req.send(function(data) {
+				alert("fin");
 				MyApp.redraw();
 			});
 		});
