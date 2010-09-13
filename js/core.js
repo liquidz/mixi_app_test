@@ -34,7 +34,7 @@ MyApp.init = function(){
 //			$("#debug").html(yy + "<br/ >id = " + id + ", step = " + steps[id]["step"]);
 //		}
 		var response = data.get("response").getData();
-		$("#debug").html("step = " + response["step"]);
+		$("#debug").html("step = " + response[viewer.getId()]["step"]);
 		var step = response["step"];
 		MyApp.step = (step === null || step === undefined || step === "") ? 0 : parseInt(step);
 		Tadashii.createCanvas("#target");
