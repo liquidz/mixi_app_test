@@ -28,8 +28,13 @@ MyApp.init = function(){
 		$("#name").html(viewer.getDisplayName());
 //		MyApp.viewer = {id: viewer.getId(), name: viewer.getDisplayName()};
 //		MyApp.owner = {id: owner.getId(), name: owner.getDisplayName()};
+		for(var id in data.get("step").getData()){
+			var yy = $("#debug").html();
+			$("#debug").html(yy + "<br/ >id = " + id);
+		}
 		var step = data.get("step").getData();
 		$("#debug").html("step = " + step);
+
 		MyApp.step = (step === null || step === undefined) ? 0 : parseInt(step);
 		Tadashii.createCanvas("#target");
 		MyApp.redraw();
