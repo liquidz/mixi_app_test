@@ -19,8 +19,8 @@ MyApp.init = function(){
 
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.OWNER), "owner");
-	req.add(req.newFetchPersonAppDataRequest(idSpec, ["step"]), "response");
-	//req.add(req.newFetchPersonAppDataRequest(opensocial.IdSpec.PersonId.VIEWER, ["step"]), "step");
+	//req.add(req.newFetchPersonAppDataRequest(idSpec, ["step"]), "response");
+	req.add(req.newFetchPersonAppDataRequest(opensocial.IdSpec.PersonId.VIEWER, ["step"]), "response");
 	req.send(function(data) {
 		var viewer = data.get("viewer").getData();
 		var owner = data.get("owner").getData();
@@ -28,15 +28,15 @@ MyApp.init = function(){
 		$("#name").html(viewer.getDisplayName());
 //		MyApp.viewer = {id: viewer.getId(), name: viewer.getDisplayName()};
 //		MyApp.owner = {id: owner.getId(), name: owner.getDisplayName()};
-		var steps = data.get("response").getData();
-		for(var id in steps){
-			var yy = $("#debug").html();
-			$("#debug").html(yy + "<br/ >id = " + id + ", step = " + steps[id]["step"]);
-		}
-		var step = data.get("step").getData();
-		$("#debug").html("step = " + step);
-
-		MyApp.step = (step === null || step === undefined) ? 0 : parseInt(step);
+//		var steps = data.get("response").getData();
+//		for(var id in steps){
+//			var yy = $("#debug").html();
+//			$("#debug").html(yy + "<br/ >id = " + id + ", step = " + steps[id]["step"]);
+//		}
+		var response = data.get("response").getData();
+		$("#debug").html("step = " + response["step"]);
+		var step = response["step"];
+		MyApp.step = (step === null || step === undefined || step === "") ? 0 : parseInt(step);
 		Tadashii.createCanvas("#target");
 		MyApp.redraw();
 		$("#add").bind("click", function(){
