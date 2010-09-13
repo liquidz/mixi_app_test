@@ -5,18 +5,18 @@
 		<Require feature="opensocial-0.8" />
 	</ModulePrefs>
 
-	<!--
 	<Content type="html" view="home, profile, canvas">
 		<![CDATA[
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/core.js"></script>
 		]]>
 	</Content>
+	<!--
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/core.js"></script>
 	-->
 
 	<Content type="html">
 		<![CDATA[
-		<div>こんにちは、<span id="target"></span>!</div>
+		<div>こんにちは、<span id="target"></span>!!</div>
 		]]>
 	</Content>
 </Module>
