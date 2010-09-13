@@ -7,7 +7,9 @@ MyApp.init = function(){
 	req.send(function(data) {
 		var viewer = data.get("viewer").getData();
 		var owner = data.get("owner").getData();
-		$("#target").html(viewer.getDisplayName());
+		var target = document.getElementById("target");
+		target.innerHTML = viewer.getDisplayName();
+		//$("#target").html(viewer.getDisplayName());
 	});
 };
 
