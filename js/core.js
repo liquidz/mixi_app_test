@@ -35,8 +35,9 @@ MyApp.init = function(){
 //		}
 		var response = data.get("response").getData();
 		$("#debug").html("step = " + response[viewer.getId()]["step"]);
-		var step = response["step"];
+		var step = response[viewer.getId()]["step"];
 		MyApp.step = (step === null || step === undefined || step === "") ? 0 : parseInt(step);
+		if(MyApp.step > 5){ MyApp.step = 0; }
 		Tadashii.createCanvas("#target");
 		MyApp.redraw();
 		$("#add").bind("click", function(){
