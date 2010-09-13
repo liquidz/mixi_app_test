@@ -45,7 +45,7 @@ MyApp.init = function(){
 			if(MyApp.step > 5){ MyApp.step = 0; }
 			alert("step = " + MyApp.step);
 			var req = opensocial.newDataRequest();
-			req.add(req.newUpdatePersonAppDataRequest(opensocial.IdSpec.PersonId.VIEWER, "step", MyApp.step), "response");
+			req.add(req.newUpdatePersonAppDataRequest(opensocial.IdSpec.PersonId.VIEWER, "step", ""+MyApp.step), "response");
 			req.send(function(data) {
 				alert("fin");
 				MyApp.redraw();
