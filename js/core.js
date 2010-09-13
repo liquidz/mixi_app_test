@@ -40,10 +40,8 @@ MyApp.init = function(){
 		Tadashii.createCanvas("#target");
 		MyApp.redraw();
 		$("#add").bind("click", function(){
-			alert("step = " + MyApp.step);
 			MyApp.step++;
 			if(MyApp.step > 5){ MyApp.step = 0; }
-			alert("step = " + MyApp.step);
 			var req = opensocial.newDataRequest();
 			req.add(req.newUpdatePersonAppDataRequest(opensocial.IdSpec.PersonId.VIEWER, "step", ""+MyApp.step), "response");
 			req.send(function(data) {
