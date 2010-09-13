@@ -7,8 +7,8 @@
 
 	<Content type="html" view="home, profile, canvas">
 		<![CDATA[
-		<script type="text/javascript" src="http://gist.github.com/raw/577110/7c243080233761859937d52195b670602731a379/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="http://gist.github.com/raw/577110/86399b34888c4e3805b848ae3426dc370420c896/core.js"></script>
+		<script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="./js/core.js"></script>
 		]]>
 	</Content>
 
