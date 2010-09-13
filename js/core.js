@@ -29,6 +29,7 @@ MyApp.init = function(){
 //		MyApp.viewer = {id: viewer.getId(), name: viewer.getDisplayName()};
 //		MyApp.owner = {id: owner.getId(), name: owner.getDisplayName()};
 		var step = data.get("step").getData();
+		$("#debug").html(step);
 		MyApp.step = (step === null || step === undefined) ? 0 : parseInt(step);
 		Tadashii.createCanvas("#target");
 		MyApp.redraw();
