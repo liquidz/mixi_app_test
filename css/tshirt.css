@@ -3,17 +3,15 @@
 #tshirt {
 	width: 190px;
 	height: 190px;
-	background: #f00 url(img/tshirt.png) no-repeat top left;
+	background: transparent url(img/tshirt.png) no-repeat top left;
 	text-align: center;
 	position: relative;
 }
 
 #tshirt p.name {
 	top: 40px;
-	font-size: 17px;
 }
 
 #tshirt p.number {
 	top: 35px;
-	font-size: 60px;
 }
