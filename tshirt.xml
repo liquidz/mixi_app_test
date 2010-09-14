@@ -3,6 +3,7 @@
 <Module>
 	<ModulePrefs title="uniform">
 		<Require feature="opensocial-0.8" />
+		<Require feature="views" />
 	</ModulePrefs>
 
 	<Content type="html" view="canvas">
