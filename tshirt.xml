@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Module>
+	<ModulePrefs title="uniform">
+		<Require feature="opensocial-0.8" />
+	</ModulePrefs>
+
+	<Content type="html" view="canvas">
+		<![CDATA[
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/myopensocial.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/core.js"></script>
+		<style type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/css/tshirt.css" />
+
+		<div id="tshirt">
+			<p class="name"></p>
+			<p class="number"></p>
+		</div>
+
+		<p>name: <input type="text" id="new_name" /></p>
+		<p>number: <input type="text" id="new_number" /></p>
+		<p>tshirt color: <input type="text" id="new_color" /></p>
+		<p>tshirt word color: <input type="text" id="new_word_color" /></p>
+		<p>tshirt name size: <input type="text" id="new_name_size" /></p>
+		<p>tshirt number size: <input type="text" id="new_number_size" /></p>
+		<p><button id="save_setting">save</button></p>
+		]]>
+	</Content>
+</Module>
+
+

@@ -1,43 +1,58 @@
-var MyApp = {
-	viewer: null,
-	owner: null,
-	step: 0
-};
+var MyApp = {};
 
-MyApp.redraw = function(){
-	Tadashii.clear();
-	for(var i = 0; i < MyApp.step; ++i){
-		Tadashii.draw(i, "rgb(0, 0, 0)");
-	}
-};
-
-MyApp.setStep = function(val){
-	this.step = (val === null || val === undefined || val === "") ? 0 : parseInt(val);
-	if(this.step > 5){ this.step = 0; }
-};
-MyApp.incStep = function(){
-	this.step++;
-	if(this.step > 5){ this.step = 0; }
-	return this.step;
+MyApp.update = function(name, no){
 };
 
 MyApp.init = function(){
 	var os = MyOpenSocial;
 
 	os.get({
-		viewer: os.viewer,
-		response: os.data(os.viewer, "step")
+		owner: os.owner,
+		response: os.data(os.owner, "tshirt_name", "tshirt_number", "tshirt_color", "tshirt_word_color", "tshirt_name_size", "tshirt_number_size")
 	}, function(res){
-		$("#name").html(res.viewer.getDisplayName());
-		MyApp.setStep(res.response[res.viewer.getId()]["step"]);
-		Tadashii.createCanvas("#target");
-		MyApp.redraw();
+		var data = res.response[res.owner.getId()];
+		var name = (data.tshirt_name === undefined) ? res.owner.getDisplayName() : data.tshirt_name;
+		var no = (data.tshirt_number === undefined) ? "X" : data.tshirt_number;
+		var color = (data.tshirt_color === undefined) ? "#04c" : data.tshirt_color;
+		var word_color = (data.tshirt_word_color === undefined) ? "#fff" : data.tshirt_word_color;
+		var name_size = (data.tshirt_name_size === undefined) ? "17px" : data.tshirt_name_size;
+		var number_size = (data.tshirt_number_size === undefined) ? "60px" : data.tshirt_number_size;
 
-		$("#add").bind("click", function(){
-			os.set({step: MyApp.incStep()}, function(){
-				alert("fin");
-				MyApp.redraw();
-			});
+		$("#new_name").val(name);
+		$("#new_number").val(no);
+		$("#new_color").val(color);
+		$("#new_word_color").val(word_color);
+		$("#new_name_size").val(name_size);
+		$("#new_number_size").val(number_size);
+
+		$("#tshirt").css("background-color", color);
+		$("#tshirt p").css("color", word_color);
+		$("#tshirt p.name").html(name).css("font-size", name_size);
+		$("#tshirt p.number").html(no).css("font-size", number_size);
+
+		$("#save_setting").bind("click", function(){
+			var new_name = $("#new_name").val();
+			var new_number = $("#new_number").val();
+			var new_color = $("#new_color").val();
+			var new_word_color = $("#new_word_color").val();
+			var new_name_size = $("#new_name_size").val();
+			var new_number_size = $("#new_number_size").val();
+
+			if(new_name !== "" && new_number !== "" && new_color !== "" && new_word_color !== "" && new_name_size !== "" && new_number_size !== ""){
+				os.set({
+					tshirt_name: new_name,
+					tshirt_number: new_number,
+					tshirt_color: new_color,
+					tshirt_word_color: new_word_color,
+					tshirt_name_size: new_name_size,
+					tshirt_number_size: new_number_size
+				}, function(){
+					$("#tshirt").css("background-color", color);
+					$("#tshirt p").css("color", word_color);
+					$("#tshirt p.name").html(name).css("font-size", name_size);
+					$("#tshirt p.number").html(no).css("font-size", number_size);
+				});
+			}
 		});
 	});
 };
