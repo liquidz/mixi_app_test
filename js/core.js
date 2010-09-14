@@ -54,10 +54,10 @@ MyApp.init = function(){
 					tshirt_name_size: new_name_size,
 					tshirt_number_size: new_number_size
 				}, function(){
-					$("#tshirt").css("background-color", color);
-					$("#tshirt p").css("color", word_color);
-					$("#tshirt p.name").html(name).css("font-size", name_size);
-					$("#tshirt p.number").html(no).css("font-size", number_size);
+					$("#tshirt").css("background-color", new_color);
+					$("#tshirt p").css("color", new_word_color);
+					$("#tshirt p.name").html(new_name).css("font-size", new_name_size);
+					$("#tshirt p.number").html(new_number).css("font-size", new_number_size);
 				});
 			}
 		});
