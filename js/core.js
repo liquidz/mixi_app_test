@@ -19,6 +19,12 @@ MyApp.init = function(){
 		var name_size = (data === undefined) ? "17px" : data.tshirt_name_size;
 		var number_size = (data === undefined) ? "60px" : data.tshirt_number_size;
 
+		DD_belatedPNG.fix(".iepngfix");
+		$("#tshirt").css("background-color", color);
+		$("#tshirt p").css("color", word_color);
+		$("#tshirt p.name").html(name).css("font-size", name_size);
+		$("#tshirt p.number").html(no).css("font-size", number_size);
+
 		if(res.viewer.getId() === res.owner.getId()){
 			$("#new_name").val(name);
 			$("#new_number").val(no);
@@ -26,11 +32,6 @@ MyApp.init = function(){
 			$("#new_word_color").val(word_color);
 			$("#new_name_size").val(name_size);
 			$("#new_number_size").val(number_size);
-	
-			$("#tshirt").css("background-color", color);
-			$("#tshirt p").css("color", word_color);
-			$("#tshirt p.name").html(name).css("font-size", name_size);
-			$("#tshirt p.number").html(no).css("font-size", number_size);
 	
 			$("#save_setting").bind("click", function(){
 				var new_name = $("#new_name").val();
