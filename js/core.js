@@ -87,7 +87,7 @@ MyApp.init_new = function(){
 	var os = MyOpenSocial;
 
 	os.get({
-		viwer: os.viewer,
+		viewer: os.viewer,
 		response: os.data(os.viewer, "step")
 	}, function(res){
 		$("#name").html(res.viewer.getDisplayName());
