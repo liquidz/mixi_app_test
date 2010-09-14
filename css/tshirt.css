@@ -3,7 +3,7 @@
 #tshirt {
 	width: 190px;
 	height: 190px;
-	background: transparent url(img/tshirt.png) no-repeat top left;
+	background: transparent url(../img/tshirt.png) no-repeat top left;
 	text-align: center;
 	position: relative;
 }
