@@ -43,9 +43,10 @@ MyOpenSocial.get = function(){
 	this.sendRequest.apply(
 		this, [function(req, key, val){
 			if(val === this.viewer || val === this.owner){
-				return req.newFetchPersonRequest(val), k);
+				return req.newFetchPersonRequest(val);
 			} else if($.isFunction(val)){
-				return request.add(val(req), key);
+				//return request.add(val(req), key);
+				return val(req);
 			}
 		}].concat(arguments)
 	);
