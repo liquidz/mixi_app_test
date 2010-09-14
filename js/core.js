@@ -6,8 +6,8 @@ var MyApp = {
 
 // MyOpenSocial {{{
 MyOpenSocial = {};
-MyOpenSocial.viewer = opensocial.idSpec.PersonId.VIEWER;
-MyOpenSocial.owner = opensocial.idSpec.PersonId.OWNER;
+MyOpenSocial.viewer = opensocial.IdSpec.PersonId.VIEWER;
+MyOpenSocial.owner = opensocial.IdSpec.PersonId.OWNER;
 MyOpenSocial.idSpec = function(groupId, userId){
 	var params = {};
 	params[opensocial.IdSpec.Field.USER_ID] = (userId === undefined) ? this.viewer : userId;
