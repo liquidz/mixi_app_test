@@ -17,13 +17,29 @@
 			<p class="number"></p>
 		</div>
 
-		<p>name: <input type="text" id="new_name" /></p>
-		<p>number: <input type="text" id="new_number" /></p>
-		<p>tshirt color: <input type="text" id="new_color" /></p>
-		<p>tshirt word color: <input type="text" id="new_word_color" /></p>
-		<p>tshirt name size: <input type="text" id="new_name_size" /></p>
-		<p>tshirt number size: <input type="text" id="new_number_size" /></p>
-		<p><button id="save_setting">save</button></p>
+		<div id="change_form">
+			<p>name: <input type="text" id="new_name" /></p>
+			<p>number: <input type="text" id="new_number" /></p>
+			<p>tshirt color: <input type="text" id="new_color" /></p>
+			<p>tshirt word color: <input type="text" id="new_word_color" /></p>
+			<p>tshirt name size: <input type="text" id="new_name_size" /></p>
+			<p>tshirt number size: <input type="text" id="new_number_size" /></p>
+			<p><button id="save_setting">save</button></p>
+		</div>
+		]]>
+	</Content>
+
+	<Content type="html" view="home,profile">
+		<![CDATA[
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/myopensocial.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/core.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/css/tshirt.css" />
+
+		<div id="tshirt">
+			<p class="name"></p>
+			<p class="number"></p>
+		</div>
 		]]>
 	</Content>
 </Module>
