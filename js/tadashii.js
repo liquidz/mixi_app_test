@@ -9,6 +9,15 @@ Tadashii.createCanvas = function(targetId){
 	return $(targetId).append(c);
 };
 
+Tadashii.getCanvas = function(){
+	if(this.canvas === null){
+		var c = document.getElementById(this.canvasName);
+		if(c === null || c === undefined){ return false; }
+		this.canvas = c.getContext("2d");
+	}
+	return this.canvas;
+};
+
 Tadashii.getLine = function(step, weight){
 	var s = parseInt(this.canvasSize / 5);
 	var w = (weight === undefined) ? 1 : weight;
@@ -21,14 +30,14 @@ Tadashii.getLine = function(step, weight){
 };
 
 Tadashii.draw = function(step, color, weight){
-	if(this.canvas === null){
-		var c = document.getElementById(this.canvasName);
-		if(c === null || c === undefined){ return false; }
-		this.canvas = c.getContext("2d");
-	}
-
-	this.canvas.fillStyle = color;
-	this.canvas.fillRect.apply(this.canvas, this.getLine(step, weight));
+	var c = this.getCanvas();
+	c.fillStyle = color;
+	c.fillRect.apply(this.canvas, this.getLine(step, weight));
 	return true;
 };
 
+Tadashii.clear = function(){
+	var c = this.getCanvas();
+	c.fillStyle = "rgb(255, 255, 255)";
+	c.fillRect(0, 0, this.canvasSize, this.canvasSize);
+};
