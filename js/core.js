@@ -91,16 +91,16 @@ MyApp.init_new = function(){
 		response: os.data(os.viewer, "step")
 	}, function(res){
 		$("#name").html(res.viewer.getDisplayName());
-//		MyApp.setStep(res[res.viewer.getId()]["step"]);
-//		Tadashii.createCanvas("#target");
-//		MyApp.redraw();
+		MyApp.setStep(res.response[res.viewer.getId()]["step"]);
+		Tadashii.createCanvas("#target");
+		MyApp.redraw();
 
-//		$("#add").bind("click", function(){
-//			os.set({step: MyApp.incStep()}, function(){
-//				alert("fin");
-//				MyApp.redraw();
-//			});
-//		});
+		$("#add").bind("click", function(){
+			os.set({step: MyApp.incStep()}, function(){
+				alert("fin");
+				MyApp.redraw();
+			});
+		});
 	});
 };
 
