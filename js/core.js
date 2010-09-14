@@ -25,6 +25,8 @@ MyApp.init = function(){
 		$("#tshirt p.name").html(name).css("font-size", name_size);
 		$("#tshirt p.number").html(no).css("font-size", number_size);
 
+		gadgets.window.adjustHeight();
+
 		if(res.viewer.getId() === res.owner.getId()){
 			$("#new_name").val(name);
 			$("#new_number").val(no);
