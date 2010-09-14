@@ -38,26 +38,14 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 		if($.isFunction(callback)){
 			var res = {};
 			for(var key in mapping){
-				console.log("key = " + key);
 				res[key] = data.get(key).getData();
+				console.log("key = " + key + ", value = " + res[key]);
 			}
 			callback(res);
 		}
 	});
 };
 
-MyOpenSocial.get2 = function(){
-	this.sendRequest.apply(
-		this, [function(req, key, val){
-			if(val === this.viewer || val === this.owner){
-				return req.newFetchPersonRequest(val);
-			} else if($.isFunction(val)){
-				//return request.add(val(req), key);
-				return val(req);
-			}
-		}].concat(this.toList(arguments))
-	);
-};
 MyOpenSocial.get = function(mapping, callback){
 	var self = this;
 	this.sendRequest(function(req, key, val){
@@ -69,59 +57,12 @@ MyOpenSocial.get = function(mapping, callback){
 	}, mapping, callback);
 };
 
-//MyOpenSocial.get = function(mapping, callback){
-//	var request = opensocial.newDataRequest();
-//	for(var key in mapping){
-//		if(mapping[key] === this.viewer || mapping[key] === this.owner){
-//			request.add(request.newFetchPersonRequest(mapping[key]), key);
-//		} else if($.isFunction(mapping[key])){
-//			request.add(mapping[key](request), key);
-//		}
-//	}
-//
-//	return request.send(function(data){
-//		if($.isFunction(callback)){
-//			var res = {};
-//			for(var key in mapping){
-//				res[key] = data.get(key).getData();
-//			}
-//			callback(res);
-//		}
-//	});
-//};
-
-
-MyOpenSocial.set2 = function(){
-	this.sendRequest.apply(this,
-		[function(req, key, val){
-			return req.newUpdatePersonAppDataRequest(this.viewer, key, val);
-		}].concat(this.toList(arguments))
-	);
-};
-
 MyOpenSocial.set = function(mapping, callback){
 	var self = this;
 	this.sendRequest(function(req, key, val){
 		return req.newUpdatePersonAppDataRequest(self.viewer, key, val);
 	}, mapping, callback);
 };
-
-//MyOpenSocial.set = function(mapping, callback){
-//	var request = opensocial.newDataRequest();
-//	for(var key in mapping){
-//		request.add(request.newUpdatePersonAppDataRequest(this.viewer, key, mapping[key]), key);
-//	}
-//
-//	request.send(function(data){
-//		if($.isFunction(callback)){
-//			var res = {};
-//			for(var key in mapping){
-//				res[key] = data.get(key).getData();
-//			}
-//			callback(res);
-//		}
-//	});
-//};
 
 // }}}
 
@@ -150,16 +91,16 @@ MyApp.init_new = function(){
 		response: os.data(os.viewer, "step")
 	}, function(res){
 		$("#name").html(res.viewer.getDisplayName());
-		MyApp.setStep(res[res.viewer.getId()]["step"]);
-		Tadashii.createCanvas("#target");
-		MyApp.redraw();
+//		MyApp.setStep(res[res.viewer.getId()]["step"]);
+//		Tadashii.createCanvas("#target");
+//		MyApp.redraw();
 
-		$("#add").bind("click", function(){
-			os.set({step: MyApp.incStep()}, function(){
-				alert("fin");
-				MyApp.redraw();
-			});
-		});
+//		$("#add").bind("click", function(){
+//			os.set({step: MyApp.incStep()}, function(){
+//				alert("fin");
+//				MyApp.redraw();
+//			});
+//		});
 	});
 };
 
