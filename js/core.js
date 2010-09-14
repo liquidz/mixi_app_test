@@ -38,6 +38,7 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 		if($.isFunction(callback)){
 			var res = {};
 			for(var key in mapping){
+				console.log("key = " + key);
 				res[key] = data.get(key).getData();
 			}
 			callback(res);
