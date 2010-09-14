@@ -45,7 +45,7 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 	});
 };
 
-MyOpenSocial.get = function(){
+MyOpenSocial.get2 = function(){
 	this.sendRequest.apply(
 		this, [function(req, key, val){
 			if(val === this.viewer || val === this.owner){
@@ -56,6 +56,16 @@ MyOpenSocial.get = function(){
 			}
 		}].concat(this.toList(arguments))
 	);
+};
+MyOpenSocial.get = function(mapping, callback){
+	var self = this;
+	this.sendRequest(function(req, key, val){
+		if(val === self.viewer || val === self.owner){
+			return req.newFetchPersonRequest(val);
+		} else if($.isFunction(val)){
+			return val(req);
+		}
+	}, mapping, callback);
 };
 
 //MyOpenSocial.get = function(mapping, callback){
@@ -80,13 +90,21 @@ MyOpenSocial.get = function(){
 //};
 
 
-MyOpenSocial.set = function(){
+MyOpenSocial.set2 = function(){
 	this.sendRequest.apply(this,
 		[function(req, key, val){
 			return req.newUpdatePersonAppDataRequest(this.viewer, key, val);
 		}].concat(this.toList(arguments))
 	);
 };
+
+MyOpenSocial.set = function(mapping, callback){
+	var self = this;
+	this.sendRequest(function(req, key, val){
+		return req.newUpdatePersonAppDataRequest(self.viewer, key, val);
+	}, mapping, callback);
+};
+
 //MyOpenSocial.set = function(mapping, callback){
 //	var request = opensocial.newDataRequest();
 //	for(var key in mapping){
