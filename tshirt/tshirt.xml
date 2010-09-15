@@ -8,17 +8,17 @@
 
 	<Content type="html" view="canvas">
 		<![CDATA[
-		<script type="text/javascript" src="com/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="com/js/DD_belatedPNG_0.0.8a-min.js"></script>
-		<script type="text/javascript" src="com/js/myopensocial.js"></script>
-		<script type="text/javascript" src="tshirt/colorpicker/js/colorpicker.js"></script>
-		<script type="text/javascript" src="tshirt/colorpicker/js/eye.js"></script>
-		<script type="text/javascript" src="tshirt/colorpicker/js/layout.js"></script>
-		<script type="text/javascript" src="tshirt/colorpicker/js/utils.js"></script>
-		<script type="text/javascript" src="tshirt/js/core.js"></script>
-		<link rel="stylesheet" type="text/css" href="tshirt/colorpicker/css/colorpicker.css" />
-		<link rel="stylesheet" type="text/css" href="tshirt/colorpicker/css/layout.css" />
-		<link rel="stylesheet" type="text/css" href="tshirt/css/tshirt.css" />
+		<script type="text/javascript" src="../com/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="../com/js/DD_belatedPNG_0.0.8a-min.js"></script>
+		<script type="text/javascript" src="../com/js/myopensocial.js"></script>
+		<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
+		<script type="text/javascript" src="colorpicker/js/eye.js"></script>
+		<script type="text/javascript" src="colorpicker/js/layout.js"></script>
+		<script type="text/javascript" src="colorpicker/js/utils.js"></script>
+		<script type="text/javascript" src="js/core.js"></script>
+		<link rel="stylesheet" type="text/css" href="colorpicker/css/colorpicker.css" />
+		<link rel="stylesheet" type="text/css" href="colorpicker/css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
 			<p class="name"></p>
