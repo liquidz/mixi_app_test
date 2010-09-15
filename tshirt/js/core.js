@@ -79,9 +79,8 @@ MyApp.bindEvents = function(){
 };
 
 MyApp.init_new = function(){
-	var self = this;
-	this.get(function(res){
-		self.set(res);
+	MyApp.get(function(res){
+		MyApp.set(res);
 		gadgets.window.adjustHeight();
 
 		if(res.viewer.getId() === res.owner.getId()){
@@ -91,7 +90,7 @@ MyApp.init_new = function(){
 				e.val(res[k]);
 			};
 
-			self.bindEvents();
+			MyApp.bindEvents();
 
 		} else {
 			$("#change_form").hide();
