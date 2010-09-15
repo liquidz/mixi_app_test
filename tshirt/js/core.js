@@ -62,6 +62,7 @@ MyApp.saveSetting = function(){
 	var newData = {};
 	for(var key in MyApp.defaultData){
 		newData[key] = $("#new_" + key).val();
+		console.log("new " + key + " = " + newData[key]);
 		if(newData[key] === ""){ return false; }
 	}
 
