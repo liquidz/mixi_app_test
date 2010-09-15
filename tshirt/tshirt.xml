@@ -17,8 +17,10 @@
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/js/utils.js"></script>
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/core.js"></script>
 
+		<!--
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/css/colorpicker.css" />
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/css/layout.css" />
+		-->
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
