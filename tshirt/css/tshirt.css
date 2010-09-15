@@ -8,10 +8,10 @@
 	position: relative;
 }
 
-#tshirt p.name {
+#tshirt p.tshirt_name {
 	top: 40px;
 }
 
-#tshirt p.number {
+#tshirt p.tshirt_number {
 	top: 35px;
 }
