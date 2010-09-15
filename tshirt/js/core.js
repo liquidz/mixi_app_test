@@ -1,6 +1,7 @@
 var MyApp = {};
 
 MyApp.defaultData = {
+	tshirt_name: null,
 	tshirt_number: "X",
 	tshirt_color: "#04c",
 	tshirt_word_color: "#fff",
@@ -65,7 +66,6 @@ MyApp.saveSetting = function(){
 		console.log("new " + key + " = " + newData[key]);
 		if(newData[key] === ""){ return false; }
 	}
-
 	MyOpenSocial.set(newData, function(){
 		MyApp.set(newData);
 	});
