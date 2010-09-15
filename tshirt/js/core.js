@@ -25,7 +25,7 @@ MyApp.defaultData = {
 MyApp.get = function(callback){
 	var os = MyOpenSocial;
 	var withDefault = function(obj, key, defaultVal){
-		return((obj === undefined) ? defaultVal : obj[key]);
+		return((obj === undefined || obj === null || obj === "") ? defaultVal : obj[key]);
 	};
 
 	os.get({
