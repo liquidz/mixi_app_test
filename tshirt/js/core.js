@@ -38,7 +38,7 @@ MyApp.get = function(callback){
 		for(var k in MyApp.defaultData){
 			getData[k] = withDefault(data, k, MyApp.defaultData[k])
 		}
-		getData.name = withDefault(data, "tshirt_name", res.owner.getDisplayName());
+		getData.tshirt_name = withDefault(data, "tshirt_name", res.owner.getDisplayName());
 		getData.viewer = res.viewer;
 		getData.owner = res.owner;
 
@@ -47,9 +47,8 @@ MyApp.get = function(callback){
 };
 
 MyApp.set = function(data){
-	console.log("data = " + data);
 	//this.loadFont(data.tshirt_font);
-	//
+	
 	DD_belatedPNG.fix(".iepngfix");
 	$("#tshirt").css("background-color", data.tshirt_color);
 	$("#tshirt p").css("color", data.tshirt_word_color);
