@@ -191,5 +191,5 @@ MyApp.init = function(){
 };
 
 (function(){
-	gadgets.util.registerOnLoadHandler(MyApp.init);
+	gadgets.util.registerOnLoadHandler(MyApp.init_new);
 })();
