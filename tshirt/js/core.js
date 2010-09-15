@@ -47,6 +47,7 @@ MyApp.get = function(callback){
 };
 
 MyApp.set = function(data){
+	console.log("data = " + data);
 	//this.loadFont(data.tshirt_font);
 	//
 	DD_belatedPNG.fix(".iepngfix");
