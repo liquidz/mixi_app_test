@@ -9,18 +9,18 @@ MyApp.defaultData = {
 //	tshirt_font: "Droid Sans"
 };
 
-MyApp.loadFont = function(fontName){
-	WebFontConfig = {
-		google: { families: [fontName]}
-	};
-	var wf = document.createElement("script");
-	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-		'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-	wf.type = 'text/javascript';
-	wf.async = 'true';
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(wf, s);
-};
+//MyApp.loadFont = function(fontName){
+//	WebFontConfig = {
+//		google: { families: [fontName]}
+//	};
+//	var wf = document.createElement("script");
+//	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+//		'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+//	wf.type = 'text/javascript';
+//	wf.async = 'true';
+//	var s = document.getElementsByTagName('script')[0];
+//	s.parentNode.insertBefore(wf, s);
+//};
 
 MyApp.get = function(callback){
 	var os = MyOpenSocial;
@@ -56,6 +56,18 @@ MyApp.set = function(data){
 	//$(".wf-active #tshirt p").css("font-family", data.tshirt_font);
 	$("#tshirt p.name").html(data.tshirt_name).css("font-size", data.tshirt_name_size);
 	$("#tshirt p.number").html(data.tshirt_number).css("font-size", data.tshirt_number_size);
+};
+
+MyApp.saveSetting = function(){
+	var newData = {};
+	for(var key in MyApp.defaultData){
+		newData[key] = $("#new_" + key).val();
+		if(newData[key] === ""){ return false; }
+	}
+
+	MyOpenSocial.set(newData, function(){
+		MyApp.set(newData);
+	});
 };
 
 MyApp.bindEvents = function(){
@@ -102,17 +114,6 @@ MyApp.init_new = function(){
 	});
 };
 
-MyApp.saveSetting = function(){
-	var newData = {};
-	for(var key in this.defaultData){
-		newData[key] = $("#new_" + key).val();
-		if(newData[key] === ""){ return false; }
-	}
-
-	MyOpenSocial.set(newData, function(){
-		MyApp.set(newData);
-	});
-};
 
 MyApp.init = function(){
 	var os = MyOpenSocial;
