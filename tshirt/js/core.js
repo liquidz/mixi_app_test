@@ -55,8 +55,8 @@ MyApp.set = function(data){
 	$("#tshirt p").css("color", data.tshirt_word_color);
 	//$(".wf-inactive #tshirt p").css("font-family", "sans-serif");
 	//$(".wf-active #tshirt p").css("font-family", data.tshirt_font);
-	$("#tshirt p.name").html(data.tshirt_name).css("font-size", data.tshirt_name_size);
-	$("#tshirt p.number").html(data.tshirt_number).css("font-size", data.tshirt_number_size);
+	$("#tshirt p.tshirt_name").html(data.tshirt_name).css("font-size", data.tshirt_name_size);
+	$("#tshirt p.tshirt_number").html(data.tshirt_number).css("font-size", data.tshirt_number_size);
 };
 
 MyApp.saveSetting = function(){
@@ -72,22 +72,22 @@ MyApp.saveSetting = function(){
 
 MyApp.bindEvents = function(){
 	$("#save_setting").bind("click", MyApp.saveSetting);
-//	$(".color").each(function(){
-//		var self = this;
-//		$(this).ColorPicker({
-//			color: $(this).val(),
-//			onShow: function(cp){ $(cp).fadeIn(250); },
-//			onHide: function(cp){ $(cp).fadeOut(250); },
-//			onChange: function(hsb, hex, rgb){
-//				$(self).val("#" + hex);
-//				if(self.id === "tshirt_color"){
-//					$("#tshirt").css("background-color", "#" + hex);
-//				} else {
-//					$("#tshirt p").css("color", "#" + hex);
-//				}
-//			}
-//		});
-//	});
+	$(".color").each(function(){
+		var self = this;
+		$(this).ColorPicker({
+			color: $(this).val(),
+			onShow: function(cp){ $(cp).fadeIn(250); },
+			onHide: function(cp){ $(cp).fadeOut(250); },
+			onChange: function(hsb, hex, rgb){
+				$(self).val("#" + hex);
+				if(self.id === "tshirt_color"){
+					$("#tshirt").css("background-color", "#" + hex);
+				} else {
+					$("#tshirt p").css("color", "#" + hex);
+				}
+			}
+		});
+	});
 };
 
 MyApp.init = function(){

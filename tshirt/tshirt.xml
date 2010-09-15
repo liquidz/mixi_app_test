@@ -17,15 +17,13 @@
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/js/utils.js"></script>
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/core.js"></script>
 
-		<!--
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/css/colorpicker.css" />
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/css/layout.css" />
-		-->
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
-			<p class="name"></p>
-			<p class="number"></p>
+			<p class="tshirt_name"></p>
+			<p class="tshirt_number"></p>
 		</div>
 
 		<div id="change_form">
@@ -49,8 +47,8 @@
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
-			<p class="name"></p>
-			<p class="number"></p>
+			<p class="tshirt_name"></p>
+			<p class="tshit_number"></p>
 		</div>
 		]]>
 	</Content>
