@@ -8,11 +8,17 @@
 
 	<Content type="html" view="canvas">
 		<![CDATA[
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/DD_belatedPNG_0.0.8a-min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/myopensocial.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/js/core.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/css/tshirt.css" />
+		<script type="text/javascript" src="com/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="com/js/DD_belatedPNG_0.0.8a-min.js"></script>
+		<script type="text/javascript" src="com/js/myopensocial.js"></script>
+		<script type="text/javascript" src="tshirt/colorpicker/js/colorpicker.js"></script>
+		<script type="text/javascript" src="tshirt/colorpicker/js/eye.js"></script>
+		<script type="text/javascript" src="tshirt/colorpicker/js/layout.js"></script>
+		<script type="text/javascript" src="tshirt/colorpicker/js/utils.js"></script>
+		<script type="text/javascript" src="tshirt/js/core.js"></script>
+		<link rel="stylesheet" type="text/css" href="tshirt/colorpicker/css/colorpicker.css" />
+		<link rel="stylesheet" type="text/css" href="tshirt/colorpicker/css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
 			<p class="name"></p>
@@ -20,12 +26,12 @@
 		</div>
 
 		<div id="change_form">
-			<p>name: <input type="text" id="new_name" /></p>
-			<p>number: <input type="text" id="new_number" /></p>
-			<p>tshirt color: <input type="text" id="new_color" /></p>
-			<p>tshirt word color: <input type="text" id="new_word_color" /></p>
-			<p>tshirt name size: <input type="text" id="new_name_size" /></p>
-			<p>tshirt number size: <input type="text" id="new_number_size" /></p>
+			<p>name: <input type="text" id="new_tshirt_name" /></p>
+			<p>number: <input type="text" id="new_tshirt_number" /></p>
+			<p>tshirt color: <input type="text" id="new_tshirt_color" class="color" /></p>
+			<p>tshirt word color: <input type="text" id="new_tshirt_word_color" class="color" /></p>
+			<p>tshirt name size: <input type="text" id="new_tshirt_name_size" /></p>
+			<p>tshirt number size: <input type="text" id="new_tshirt_number_size" /></p>
 			<p><button id="save_setting">save</button></p>
 		</div>
 		]]>
