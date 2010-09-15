@@ -72,22 +72,22 @@ MyApp.saveSetting = function(){
 
 MyApp.bindEvents = function(){
 	$("#save_setting").bind("click", MyApp.saveSetting);
-	$(".color").each(function(){
-		var self = this;
-		$(this).ColorPicker({
-			color: $(this).val(),
-			onShow: function(cp){ $(cp).fadeIn(250); },
-			onHide: function(cp){ $(cp).fadeOut(250); },
-			onChange: function(hsb, hex, rgb){
-				$(self).val("#" + hex);
-				if(self.id === "tshirt_color"){
-					$("#tshirt").css("background-color", "#" + hex);
-				} else {
-					$("#tshirt p").css("color", "#" + hex);
-				}
-			}
-		});
-	});
+//	$(".color").each(function(){
+//		var self = this;
+//		$(this).ColorPicker({
+//			color: $(this).val(),
+//			onShow: function(cp){ $(cp).fadeIn(250); },
+//			onHide: function(cp){ $(cp).fadeOut(250); },
+//			onChange: function(hsb, hex, rgb){
+//				$(self).val("#" + hex);
+//				if(self.id === "tshirt_color"){
+//					$("#tshirt").css("background-color", "#" + hex);
+//				} else {
+//					$("#tshirt p").css("color", "#" + hex);
+//				}
+//			}
+//		});
+//	});
 };
 
 MyApp.init = function(){
