@@ -7,7 +7,7 @@ MyApp.defaultData = {
 	tshirt_color: "#04c",
 	tshirt_word_color: "#fff",
 	tshirt_name_size: "17px",
-	tshirt_number_size: "60px"//,
+	tshirt_number_size: "60px",
 	tshirt_name_top: "40px",
 	tshirt_number_top: "30px"
 //	tshirt_font: "Droid Sans"
