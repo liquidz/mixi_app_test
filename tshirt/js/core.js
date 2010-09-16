@@ -56,6 +56,7 @@ MyApp.set = function(data){
 	//this.loadFont(data.tshirt_font);
 	
 	DD_belatedPNG.fix(".iepngfix");
+	console.log("tshirt_image = " + data.tshirt_image);
 	$("#tshirt").css("background-image", "url(" + MyApp.url + "img/" + data.tshirt_image + ")");
 	$("#tshirt").css("background-color", data.tshirt_color);
 	$("#tshirt p").css("color", data.tshirt_word_color);
