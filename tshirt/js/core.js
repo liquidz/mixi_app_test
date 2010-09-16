@@ -106,6 +106,15 @@ MyApp.bindEvents = function(){
 			}
 		});
 	});
+	$("#invite").bind("click", function(){
+		MyOpenSocial.invite(function(res){
+			if(res.hadError()){
+				alert("failed");
+			} else {
+				alert("success");
+			}
+		});
+	});
 };
 
 MyApp.init = function(){

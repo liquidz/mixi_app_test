@@ -41,6 +41,8 @@
 				</select>
 				<p><button id="save_setting">save</button></p>
 			</fieldset>
+
+			<button id="invite">マイミクを招待</button>
 		</div>
 		]]>
 	</Content>

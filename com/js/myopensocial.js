@@ -54,3 +54,7 @@ MyOpenSocial.set = function(mapping, callback){
 	}, mapping, callback);
 };
 
+MyOpenSocial.invite = function(callback){
+	opensocial.requestShareApp("VIEWER_FRIENDS", null, callback);
+};
+
