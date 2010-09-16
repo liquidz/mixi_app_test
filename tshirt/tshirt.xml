@@ -33,13 +33,10 @@
 				<p>tshirt number size: <input type="text" id="new_tshirt_number_size" /></p>
 				<p>tshirt name top: <input type="text" id="new_tshirt_name_top" /></p>
 				<p>tshirt number top: <input type="text" id="new_tshirt_number_top" /></p>
-				<!--
 				<select id="new_tshirt_image">
 					<option value="tshirt.png">default</option>
-					<option value="tshirt2.png">hoge</option>
-					<option value="tshirt3.png">fuga</option>
+					<option value="baby.png">hoge</option>
 				</select>
-				-->
 				<p><button id="save_setting">save</button></p>
 			</fieldset>
 		</div>

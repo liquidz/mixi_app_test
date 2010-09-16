@@ -1,7 +1,9 @@
 var MyApp = {};
 
+MyApp.url = "http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/";
+
 MyApp.defaultData = {
-	//tshirt_image: "tshirt.png",
+	tshirt_image: "tshirt.png",
 	tshirt_name: null,
 	tshirt_number: "X",
 	tshirt_color: "#04c",
@@ -54,7 +56,7 @@ MyApp.set = function(data){
 	//this.loadFont(data.tshirt_font);
 	
 	DD_belatedPNG.fix(".iepngfix");
-	//$("#tshirt").css("background-image", "url(../img/" + data.tshirt_image + ")");
+	$("#tshirt").css("background-image", "url(" + MyApp.url + "img/" + data.tshirt_image + ")");
 	$("#tshirt").css("background-color", data.tshirt_color);
 	$("#tshirt p").css("color", data.tshirt_word_color);
 	//$(".wf-inactive #tshirt p").css("font-family", "sans-serif");
@@ -70,21 +72,23 @@ MyApp.set = function(data){
 };
 
 MyApp.saveSetting = function(){
-	var newData = {};
-	for(var key in MyApp.defaultData){
-		newData[key] = $("#new_" + key).val();
-		if(newData[key] === ""){ return false; }
+	if(confirm("do you really save this setting?")){
+		var newData = {};
+		for(var key in MyApp.defaultData){
+			newData[key] = $("#new_" + key).val();
+			if(newData[key] === ""){ return false; }
+		}
+		MyOpenSocial.set(newData, function(){
+			MyApp.set(newData);
+		});
 	}
-	MyOpenSocial.set(newData, function(){
-		MyApp.set(newData);
-	});
 };
 
 MyApp.bindEvents = function(){
 	$("#save_setting").bind("click", MyApp.saveSetting);
-//	$("#new_tshirt_image").bind("change", function(event){
-//		$("#tshirt").css("background-image", "url(../img/" + $(event.target).val() + ")");
-//	});
+	$("#new_tshirt_image").bind("change", function(event){
+		$("#tshirt").css("background-image", "url("+ MyApp.url +"img/" + $(event.target).val() + ")");
+	});
 	$(".color").each(function(){
 		var self = this;
 		$(this).ColorPicker({
