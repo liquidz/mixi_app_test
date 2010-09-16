@@ -8,6 +8,8 @@ MyApp.defaultData = {
 	tshirt_word_color: "#fff",
 	tshirt_name_size: "17px",
 	tshirt_number_size: "60px"//,
+	tshirt_name_top: "40px",
+	tshirt_number_top: "30px"
 //	tshirt_font: "Droid Sans"
 };
 
@@ -33,7 +35,7 @@ MyApp.get = function(callback){
 	os.get({
 		viewer: os.viewer,
 		owner: os.owner,
-		response: os.data(os.owner, "tshirt_name", "tshirt_number", "tshirt_color", "tshirt_word_color", "tshirt_name_size", "tshirt_number_size")
+		response: os.data(os.owner, "tshirt_name", "tshirt_number", "tshirt_color", "tshirt_word_color", "tshirt_name_size", "tshirt_number_size", "tshirt_name_top", "tshirt_number_top")
 	}, function(res){
 		var data = res.response[res.owner.getId()];
 		var getData = {};
@@ -57,8 +59,14 @@ MyApp.set = function(data){
 	$("#tshirt p").css("color", data.tshirt_word_color);
 	//$(".wf-inactive #tshirt p").css("font-family", "sans-serif");
 	//$(".wf-active #tshirt p").css("font-family", data.tshirt_font);
-	$("#tshirt p.tshirt_name").html(data.tshirt_name).css("font-size", data.tshirt_name_size);
-	$("#tshirt p.tshirt_number").html(data.tshirt_number).css("font-size", data.tshirt_number_size);
+	$("#tshirt p.tshirt_name")
+		.html(data.tshirt_name)
+		.css("font-size", data.tshirt_name_size)
+		.css("top", data.tshirt_name_top);
+	$("#tshirt p.tshirt_number")
+		.html(data.tshirt_number)
+		.css("font-size", data.tshirt_number_size)
+		.css("top", data.tshirt_number_top);
 };
 
 MyApp.saveSetting = function(){

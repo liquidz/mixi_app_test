@@ -31,6 +31,8 @@
 				<p>tshirt word color: <input type="text" id="new_tshirt_word_color" class="color" /></p>
 				<p>tshirt name size: <input type="text" id="new_tshirt_name_size" /></p>
 				<p>tshirt number size: <input type="text" id="new_tshirt_number_size" /></p>
+				<p>tshirt name top: <input type="text" id="new_tshirt_name_top" /></p>
+				<p>tshirt number top: <input type="text" id="new_tshirt_number_top" /></p>
 				<!--
 				<select id="new_tshirt_image">
 					<option value="tshirt.png">default</option>
