@@ -58,3 +58,11 @@ MyOpenSocial.invite = function(callback){
 	opensocial.requestShareApp("VIEWER_FRIENDS", null, callback);
 };
 
+MyOpenSocial.activity = function(msg){
+	var params = {};
+	params[opensocial.Activity.Field.TITLE] = msg;
+	var activityObj = opensocial.newActivity(params);
+	opensocial.requestCreateActivity(
+		activity, opensocial.CreateActivityPriority.HIGH, function(res){}
+	);
+};

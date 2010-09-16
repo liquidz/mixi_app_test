@@ -43,6 +43,7 @@
 			</fieldset>
 
 			<button id="invite">マイミクを招待</button>
+			<button id="activity">背番号の変更を通知</button>
 		</div>
 		]]>
 	</Content>
