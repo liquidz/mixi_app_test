@@ -116,7 +116,7 @@ MyApp.bindEvents = function(){
 		});
 	});
 	$("#activity").bind("click", function(){
-		MyOpenSocial.activity("てすてす");
+		MyOpenSocial.sendActivity("てすてす");
 	});
 };
 
