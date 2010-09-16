@@ -1,6 +1,6 @@
 var MyApp = {};
 
-MyApp.url = "http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/";
+MyApp.url = "http://github.com/liquidz/mixi_app_test/raw/master/tshirt/";
 
 MyApp.defaultData = {
 	tshirt_image: "tshirt.png",

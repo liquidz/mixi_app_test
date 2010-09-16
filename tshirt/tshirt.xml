@@ -8,14 +8,14 @@
 
 	<Content type="html" view="canvas">
 		<![CDATA[
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/DD_belatedPNG_0.0.8a-min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/myopensocial.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/js/colorpicker.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/core.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/DD_belatedPNG_0.0.8a-min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/myopensocial.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/colorpicker/js/colorpicker.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/js/core.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/css/colorpicker.css" />
-		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/colorpicker/css/colorpicker.css" />
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
 			<p class="tshirt_name"></p>
@@ -50,11 +50,11 @@
 
 	<Content type="html" view="home,profile">
 		<![CDATA[
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/DD_belatedPNG_0.0.8a-min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/myopensocial.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/core.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/DD_belatedPNG_0.0.8a-min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/myopensocial.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/js/core.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
 			<p class="tshirt_name"></p>
