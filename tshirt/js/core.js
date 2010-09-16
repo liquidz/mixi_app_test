@@ -72,7 +72,7 @@ MyApp.set = function(data){
 };
 
 MyApp.saveSetting = function(){
-	if(confirm("do you really save this setting?")){
+//	if(confirm("do you really save this setting?")){
 		var newData = {};
 		for(var key in MyApp.defaultData){
 			newData[key] = $("#new_" + key).val();
@@ -81,7 +81,7 @@ MyApp.saveSetting = function(){
 		MyOpenSocial.set(newData, function(){
 			MyApp.set(newData);
 		});
-	}
+//	}
 };
 
 MyApp.bindEvents = function(){
