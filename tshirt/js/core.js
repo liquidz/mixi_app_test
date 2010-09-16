@@ -37,7 +37,7 @@ MyApp.get = function(callback){
 	os.get({
 		viewer: os.viewer,
 		owner: os.owner,
-		response: os.data(os.owner, "tshirt_name", "tshirt_number", "tshirt_color", "tshirt_word_color", "tshirt_name_size", "tshirt_number_size", "tshirt_name_top", "tshirt_number_top")
+		response: os.data(os.owner, "tshirt_image", "tshirt_name", "tshirt_number", "tshirt_color", "tshirt_word_color", "tshirt_name_size", "tshirt_number_size", "tshirt_name_top", "tshirt_number_top")
 	}, function(res){
 		var data = res.response[res.owner.getId()];
 		var getData = {};
