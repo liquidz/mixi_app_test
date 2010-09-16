@@ -85,7 +85,7 @@ MyApp.bindEvents = function(){
 			onHide: function(cp){ $(cp).fadeOut(250); },
 			onChange: function(hsb, hex, rgb){
 				$(self).val("#" + hex);
-				if(self.id === "tshirt_color"){
+				if(self.id === "new_tshirt_color"){
 					$("#tshirt").css("background-color", "#" + hex);
 				} else {
 					$("#tshirt p").css("color", "#" + hex);
