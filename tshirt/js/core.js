@@ -116,7 +116,7 @@ MyApp.bindEvents = function(){
 		});
 	});
 	$("#activity").bind("click", function(){
-		MyOpenSocial.sendActivity("てすてす");
+		MyOpenSocial.sendActivity("背番号が変更されました");
 	});
 };
 
