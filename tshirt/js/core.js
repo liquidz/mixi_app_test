@@ -1,6 +1,7 @@
 var MyApp = {};
 
 MyApp.defaultData = {
+	//tshirt_image: "tshirt.png",
 	tshirt_name: null,
 	tshirt_number: "X",
 	tshirt_color: "#04c",
@@ -51,6 +52,7 @@ MyApp.set = function(data){
 	//this.loadFont(data.tshirt_font);
 	
 	DD_belatedPNG.fix(".iepngfix");
+	//$("#tshirt").css("background-image", "url(../img/" + data.tshirt_image + ")");
 	$("#tshirt").css("background-color", data.tshirt_color);
 	$("#tshirt p").css("color", data.tshirt_word_color);
 	//$(".wf-inactive #tshirt p").css("font-family", "sans-serif");
@@ -72,22 +74,25 @@ MyApp.saveSetting = function(){
 
 MyApp.bindEvents = function(){
 	$("#save_setting").bind("click", MyApp.saveSetting);
-//	$(".color").each(function(){
-//		var self = this;
-//		$(this).ColorPicker({
-//			color: $(this).val(),
-//			onShow: function(cp){ $(cp).fadeIn(250); },
-//			onHide: function(cp){ $(cp).fadeOut(250); },
-//			onChange: function(hsb, hex, rgb){
-//				$(self).val("#" + hex);
-//				if(self.id === "tshirt_color"){
-//					$("#tshirt").css("background-color", "#" + hex);
-//				} else {
-//					$("#tshirt p").css("color", "#" + hex);
-//				}
-//			}
-//		});
+//	$("#new_tshirt_image").bind("change", function(event){
+//		$("#tshirt").css("background-image", "url(../img/" + $(event.target).val() + ")");
 //	});
+	$(".color").each(function(){
+		var self = this;
+		$(this).ColorPicker({
+			color: $(this).val(),
+			onShow: function(cp){ $(cp).fadeIn(250); },
+			onHide: function(cp){ $(cp).fadeOut(250); },
+			onChange: function(hsb, hex, rgb){
+				$(self).val("#" + hex);
+				if(self.id === "tshirt_color"){
+					$("#tshirt").css("background-color", "#" + hex);
+				} else {
+					$("#tshirt p").css("color", "#" + hex);
+				}
+			}
+		});
+	});
 };
 
 MyApp.init = function(){
