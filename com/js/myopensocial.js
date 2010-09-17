@@ -8,17 +8,17 @@ MyOpenSocial.idSpec = function(groupId, userId){
 	return opensocial.newIdSpec(params);
 };
 MyOpenSocial.toList = function(obj){
+//	return kuma.fold(obj, [], function(x, r){ return r.concat(x); });
 	var res = [];
 	for(var i = 0, l = obj.length; i < l; ++i){ res.push(obj[i]); }
 	return res;
 };
-MyOpenSocial.data = function(){
-	if(arguments.length < 2){ return null; }
-	var alist = this.toList(arguments);
-	var idspec = alist[0];
-	var kes = alist.slice(1);
+MyOpenSocial.data = function(idspec, keys){
+//	var alist = this.toList(arguments);
+//	var idspec = alist[0];
+//	var kes = alist.slice(1);
 	return function(req){
-		return req.newFetchPersonAppDataRequest(idspec, kes);
+		return req.newFetchPersonAppDataRequest(idspec, keys);
 	};
 };
 
@@ -29,33 +29,33 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 	}
 	return request.send(function(data){
 		if($.isFunction(callback)){
-			var res = {};
-			for(var key in mapping){ res[key] = data.get(key).getData(); }
-			callback(res);
+			callback(kuma.map(mapping, function(key){ return data.get(key).getData(); }));
+//			var res = {};
+//			for(var key in mapping){ res[key] = data.get(key).getData(); }
+//			callback(res);
 		}
 	});
 };
 
 MyOpenSocial.get = function(mapping, callback){
-	var self = this;
-	this.sendRequest(function(req, key, val){
-		if(val === self.viewer || val === self.owner){
+	this.sendRequest(kuma.scope(this, function(req, key, val){
+		if(val === this.viewer || val === this.owner){
 			return req.newFetchPersonRequest(val);
 		} else if($.isFunction(val)){
 			return val(req);
 		}
-	}, mapping, callback);
+	}), mapping, callback);
 };
 
 MyOpenSocial.set = function(mapping, callback){
-	var self = this;
-	this.sendRequest(function(req, key, val){
-		return req.newUpdatePersonAppDataRequest(self.viewer, key, val);
-	}, mapping, callback);
+	this.sendRequest(kuma.scope(this, function(req, key, val){
+		return req.newUpdatePersonAppDataRequest(this.viewer, key, val);
+	}), mapping, callback);
 };
 
 MyOpenSocial.invite = function(callback){
-	opensocial.requestShareApp("VIEWER_FRIENDS", null, callback);
+	var cb = (kuma.isNull(callback) || !$.isFunction(callback)) ? function(){} : callback;
+	opensocial.requestShareApp("VIEWER_FRIENDS", null, cb);
 };
 
 MyOpenSocial.sendActivity = function(msg){

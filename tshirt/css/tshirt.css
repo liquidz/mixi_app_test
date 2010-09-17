@@ -8,12 +8,8 @@
 	position: relative;
 }
 
-/*
-#tshirt p.tshirt_name {
-	top: 40px;
+#tshirt p {
+	border: 1px solid #fff;
+	display: inline;
 }
 
-#tshirt p.tshirt_number {
-	top: 35px;
-}
-	*/
