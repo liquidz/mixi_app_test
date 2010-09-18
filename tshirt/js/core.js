@@ -93,7 +93,7 @@ MyApp.saveSetting = function(){
 MyApp.resetSetting = function(){
 	var os = MyOpenSocial;
 	os.get({viewer: os.viewer}, kuma.scope(this, function(res){
-		var data = kuma.clone(this.defaultData]);
+		var data = kuma.clone(this.defaultData);
 		data.tshirt_name = res.viewer.getDisplayName();
 
 		for(var k in data){
