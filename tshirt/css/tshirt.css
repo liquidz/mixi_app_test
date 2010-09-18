@@ -1,4 +1,7 @@
+/*
 #tshirt, #tshirt p { margin: 0; padding: 0; position: relative; font-weight: bold; }
+*/
+#tshirt, #tshirt p { margin: 0; padding: 0; font-weight: bold; }
 
 #tshirt {
 	width: 190px;
@@ -8,12 +11,12 @@
 	position: relative;
 }
 
-/*
-#tshirt p.tshirt_name {
-	top: 40px;
+#tshirt p {
+	border: 1px dotted #fafafa;
+	display: inline;
+	cursor: move;
+	position: absolute;
 }
-
-#tshirt p.tshirt_number {
-	top: 35px;
+#tshirt p:hover {
+	border: 1px solid #fff;
 }
-	*/

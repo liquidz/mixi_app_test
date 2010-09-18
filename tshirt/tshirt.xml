@@ -8,31 +8,40 @@
 
 	<Content type="html" view="canvas">
 		<![CDATA[
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/DD_belatedPNG_0.0.8a-min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/myopensocial.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/colorpicker/js/colorpicker.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/js/core.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/kuma.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/myopensocial.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/DD_belatedPNG_0.0.8a-min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/jquery-ui-1.8.4.custom.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/jSlider/js/jquery.dependClass.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/jSlider/js/jquery.slider-min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/js/colorpicker.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/core.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/colorpicker/css/colorpicker.css" />
-		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/css/tshirt.css" />
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/colorpicker/css/colorpicker.css" />
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/jSlider/css/jslider.css" />
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
 			<p class="tshirt_name"></p>
 			<p class="tshirt_number"></p>
 		</div>
+		<p>※ドラッグ＆ドロップで移動できます</p>
 
 		<div id="change_form">
 			<fieldset>
 				<legend>change setting</legend>
-				<p>name: <input type="text" id="new_tshirt_name" /></p>
-				<p>number: <input type="text" id="new_tshirt_number" /></p>
+				<p>name: <input type="text" id="new_tshirt_name" class="text" /></p>
+				<p>number: <input type="text" id="new_tshirt_number" class="text" /></p>
 				<p>tshirt color: <input type="text" id="new_tshirt_color" class="color" /></p>
-				<p>tshirt word color: <input type="text" id="new_tshirt_word_color" class="color" /></p>
-				<p>tshirt name size: <input type="text" id="new_tshirt_name_size" /></p>
-				<p>tshirt number size: <input type="text" id="new_tshirt_number_size" /></p>
-				<p>tshirt name top: <input type="text" id="new_tshirt_name_top" /></p>
-				<p>tshirt number top: <input type="text" id="new_tshirt_number_top" /></p>
+				<p>tshirt name color: <input type="text" id="new_tshirt_name_color" class="color" /></p>
+				<p>tshirt number color: <input type="text" id="new_tshirt_number_color" class="color" /></p>
+				<p>tshirt name size: <input type="slider" id="new_tshirt_name_size" class="slider" /></p>
+				<p>tshirt number size: <input type="slider" id="new_tshirt_number_size" class="slider" /></p>
+				<p>tshirt name top: <input type="text" id="new_tshirt_name_top" class="text" /></p>
+				<p>tshirt name left: <input type="text" id="new_tshirt_name_left" class="text" /></p>
+				<p>tshirt number top: <input type="text" id="new_tshirt_number_top" class="text" /></p>
+				<p>tshirt number left: <input type="text" id="new_tshirt_number_left" class="text" /></p>
 				<select id="new_tshirt_image">
 					<option value="tshirt.png">default</option>
 					<option value="baby.png">baby</option>
@@ -40,6 +49,7 @@
 					<option value="cat.png">cat</option>
 				</select>
 				<p><button id="save_setting">save</button></p>
+				<p><button id="reset_setting">reset</button></p>
 			</fieldset>
 
 			<button id="invite">マイミクを招待</button>
@@ -50,11 +60,12 @@
 
 	<Content type="html" view="home,profile">
 		<![CDATA[
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/DD_belatedPNG_0.0.8a-min.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/com/js/myopensocial.js"></script>
-		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/js/core.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/css/tshirt.css" />
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/kuma.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/myopensocial.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/DD_belatedPNG_0.0.8a-min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/core.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
 
 		<div id="tshirt" class="iepngfix">
 			<p class="tshirt_name"></p>
