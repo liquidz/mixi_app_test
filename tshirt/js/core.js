@@ -137,7 +137,7 @@ MyApp.bindEvents = function(){
 };
 
 MyApp.init = function(){
-	this.get(function(res){
+	this.get(kuma.scope(this, function(res){
 		this.set(res);
 		gadgets.window.adjustHeight();
 
@@ -153,7 +153,7 @@ MyApp.init = function(){
 		} else {
 			$("#change_form").hide();
 		}
-	});
+	}));
 };
 
 (function(){
