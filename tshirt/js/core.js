@@ -115,8 +115,10 @@ MyApp.bindEvents = function(){
 				$(this).val("#" + hex);
 				if(this.id === "new_tshirt_color"){
 					$("#tshirt").css("background-color", "#" + hex);
+				} else if(this.id === "new_tshirt_name_color"){
+					$("#tshirt p.tshirt_name").css("color", "#" + hex);
 				} else {
-					$("#tshirt p").css("color", "#" + hex);
+					$("#tshirt p.tshirt_number").css("color", "#" + hex);
 				}
 			})
 		});
