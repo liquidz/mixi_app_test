@@ -52,7 +52,7 @@ kuma.clone = function(obj){
 			return((typeof x === 'object') ? this.clone(x) : x);
 		}));
 	} else {
-		return this.fold(obj, new (obj.constructor), this.scope(this, function(key, val, res){
+		return this.fold(obj, {}, this.scope(this, function(key, val, res){
 			res[key] = (typeof val === 'object') ? this.clone(val) : val;
 			return res;
 		}));
