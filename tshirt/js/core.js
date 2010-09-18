@@ -108,12 +108,7 @@ MyApp.resetSetting = function(){
 
 MyApp.bindEvents = function(){
 	$("#save_setting").bind("click", kuma.scope(this, this.saveSetting));
-	$("#reset_setting").bind("click", kuma.scope(this, function(){
-		if(confirm("reset?")){
-			this.get
-			this.set(this.defaultData);
-		}
-	}));
+	$("#reset_setting").bind("click", kuma.scope(this, this.resetSetting));
 	$("#new_tshirt_image").bind("change", kuma.scope(this, function(event){
 		$("#tshirt").css("background-image", "url("+ this.url +"img/" + $(event.target).val() + ")");
 	}));
