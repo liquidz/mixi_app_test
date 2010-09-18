@@ -44,4 +44,4 @@ kuma.map = function(obj, fn){
 	}
 };
 
-kuma.scope = function(ns, fn){ return function(){ fn.apply(ns, arguments); }; };
+kuma.scope = function(ns, fn){ return function(){ return fn.apply(ns, arguments); }; };
