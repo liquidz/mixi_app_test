@@ -10,10 +10,10 @@ MyApp.defaultData = {
 	tshirt_word_color: "#fff",
 	tshirt_name_size: "17px",
 	tshirt_number_size: "60px",
-	tshirt_name_top: "40px",
-	tshirt_name_left: "40px",
-	tshirt_number_top: "30px",
-	tshirt_number_left: "30px"
+	tshirt_name_top: "20px",
+	tshirt_name_left: "30px",
+	tshirt_number_top: "50px",
+	tshirt_number_left: "10px"
 };
 
 MyApp.get = function(callback){
@@ -91,19 +91,21 @@ MyApp.saveSetting = function(){
 };
 
 MyApp.resetSetting = function(){
-	var os = MyOpenSocial;
-	os.get({viewer: os.viewer}, kuma.scope(this, function(res){
-		var data = kuma.clone(this.defaultData);
-		data.tshirt_name = res.viewer.getDisplayName();
-
-		for(var k in data){
-			var e = $("#new_" + k);
-			if(e.length === 0){ continue; }
-			e.val(data[k]);
-			console.log("setting " + k + " = " + data[k]);
-		};
-		this.set(data);
-	}));
+	if(confirm("reset?")){
+		var os = MyOpenSocial;
+		os.get({viewer: os.viewer}, kuma.scope(this, function(res){
+			var data = kuma.clone(this.defaultData);
+			data.tshirt_name = res.viewer.getDisplayName();
+	
+			for(var k in data){
+				var e = $("#new_" + k);
+				if(e.length === 0){ continue; }
+				e.val(data[k]);
+				console.log("setting " + k + " = " + data[k]);
+			};
+			this.set(data);
+		}));
+	}
 };
 
 MyApp.bindEvents = function(){
