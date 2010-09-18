@@ -129,8 +129,10 @@ MyApp.bindEvents = function(){
 	});
 	$("#change_form input.text").bind("keyup", kuma.scope(this, this.previewSetting));
 	$("#tshirt p").draggable({
+		container: "#tshirt",
 		drag: function(ev, ui){
-			console.log("class = " + ev.target.className);
+//			console.log("class = " + ev.target.className);
+			console.dir(ev);
 			$("#new_" + ev.target.className + "_top").val((ui.position.top - 1) + "px");
 			$("#new_" + ev.target.className + "_left").val((ui.position.left - 1) + "px");
 		}
