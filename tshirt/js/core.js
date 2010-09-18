@@ -22,8 +22,6 @@ MyApp.get = function(callback){
 		return((kuma.isNull(obj) || kuma.isBlank(obj[key])) ? defaultVal : obj[key]);
 	};
 
-	console.log("getting keys = " + kuma.keys(this.defaultData));
-
 	os.get({
 		viewer: os.viewer,
 		owner: os.owner,
@@ -36,6 +34,7 @@ MyApp.get = function(callback){
 		var data = res.response[res.owner.getId()];
 		var getData = kuma.fold(this.defaultData, {}, function(k, v, r){
 			r[k] = withDefault(data, k, v);
+			console.log("getting " + k + " = " + r[k]);
 			return r;
 		});
 //		var getData = {};
