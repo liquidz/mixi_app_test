@@ -12,11 +12,11 @@
 }
 
 #tshirt p {
-	border: 1px solid #fff;
+	border: 1px dotted #fafafa;
 	display: inline;
 	cursor: move;
 	position: absolute;
 }
 #tshirt p:hover {
-	border: 1px dotted #fbfbfb;
+	border: 1px solid #fff;
 }
