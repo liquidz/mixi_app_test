@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/colorpicker/css/colorpicker.css" />
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/jSlider/css/jslider.css" />
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/css/tshirt.css" />
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/master/tshirt/css/edit.css" />
 
 		<div id="tshirt" class="iepngfix">
 			<p class="tshirt_name"></p>
