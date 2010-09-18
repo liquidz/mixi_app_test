@@ -45,3 +45,16 @@ kuma.map = function(obj, fn){
 };
 
 kuma.scope = function(ns, fn){ return function(){ return fn.apply(ns, arguments); }; };
+
+kuma.clone = function(obj){
+	if($.isArray(obj)){
+		return this.fold(obj, [], this.scope(this, function(x, res){
+			return((typeof x === 'object') ? this.clone(x) : x);
+		}));
+	} else {
+		return this.fold(obj, new (obj.constructor), this.scope(this, function(key, val, res){
+			res[key] = (typeof val === 'object') ? this.clone(val) : val;
+			return res;
+		}));
+	}
+};

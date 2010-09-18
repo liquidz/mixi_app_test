@@ -90,10 +90,26 @@ MyApp.saveSetting = function(){
 	}
 };
 
+MyApp.resetSetting = function(){
+	var os = MyOpenSocial;
+	os.get({viewer: os.viewer}, kuma.scope(this, function(res){
+		var data = kuma.clone(this.defaultData]);
+		data.tshirt_name = res.viewer.getDisplayName();
+
+		for(var k in data){
+			var e = $("#new_" + k);
+			if(e.length === 0){ continue; }
+			e.val(data[k]);
+		};
+		this.set(data);
+	}));
+};
+
 MyApp.bindEvents = function(){
 	$("#save_setting").bind("click", kuma.scope(this, this.saveSetting));
 	$("#reset_setting").bind("click", kuma.scope(this, function(){
 		if(confirm("reset?")){
+			this.get
 			this.set(this.defaultData);
 		}
 	}));
