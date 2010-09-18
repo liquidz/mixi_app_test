@@ -10,10 +10,10 @@ MyApp.defaultData = {
 	tshirt_word_color: "#fff",
 	tshirt_name_size: "17px",
 	tshirt_number_size: "60px",
-	tshirt_name_top: "10px",
+	tshirt_name_top: "5px",
 	tshirt_name_left: "30px",
-	tshirt_number_top: "60px",
-	tshirt_number_left: "0px"
+	tshirt_number_top: "65px",
+	tshirt_number_left: "-40px"
 };
 
 MyApp.get = function(callback){
