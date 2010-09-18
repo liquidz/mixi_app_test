@@ -47,6 +47,7 @@
 					<option value="cat.png">cat</option>
 				</select>
 				<p><button id="save_setting">save</button></p>
+				<p><button id="reset_setting">reset</button></p>
 			</fieldset>
 
 			<button id="invite">マイミクを招待</button>
