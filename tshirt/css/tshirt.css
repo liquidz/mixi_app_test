@@ -17,4 +17,6 @@
 	cursor: move;
 	position: absolute;
 }
-
+#tshirt p:hover {
+	border: 1px dotted #fbfbfb;
+}
