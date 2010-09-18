@@ -1,4 +1,7 @@
+/*
 #tshirt, #tshirt p { margin: 0; padding: 0; position: relative; font-weight: bold; }
+*/
+#tshirt, #tshirt p { margin: 0; padding: 0; font-weight: bold; }
 
 #tshirt {
 	width: 190px;
@@ -12,5 +15,6 @@
 	border: 1px solid #fff;
 	display: inline;
 	cursor: move;
+	position: absolute;
 }
 
