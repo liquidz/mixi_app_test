@@ -100,6 +100,7 @@ MyApp.resetSetting = function(){
 			var e = $("#new_" + k);
 			if(e.length === 0){ continue; }
 			e.val(data[k]);
+			console.log("setting " + k + " = " + data[k]);
 		};
 		this.set(data);
 	}));
