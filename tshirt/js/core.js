@@ -34,7 +34,6 @@ MyApp.get = function(callback){
 		var data = res.response[res.owner.getId()];
 		var getData = kuma.fold(this.defaultData, {}, function(k, v, r){
 			r[k] = withDefault(data, k, v);
-			console.log("getting " + k + " = " + r[k]);
 			return r;
 		});
 //		var getData = {};
@@ -51,7 +50,6 @@ MyApp.get = function(callback){
 
 MyApp.set = function(data){
 	DD_belatedPNG.fix(".iepngfix");
-	console.log("tshirt_image = " + data.tshirt_image);
 	$("#tshirt").css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")");
 	$("#tshirt").css("background-color", data.tshirt_color);
 	$("#tshirt p").css("color", data.tshirt_word_color);
@@ -101,7 +99,6 @@ MyApp.resetSetting = function(){
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
 				e.val(data[k]);
-				console.log("setting " + k + " = " + data[k]);
 			};
 			this.set(data);
 		}));
@@ -133,6 +130,7 @@ MyApp.bindEvents = function(){
 	$("#change_form input.text").bind("keyup", kuma.scope(this, this.previewSetting));
 	$("#tshirt p").draggable({
 		drag: function(ev, ui){
+			console.log("class = " + ev.target.className);
 			$("#new_" + ev.target.className + "_top").val((ui.position.top - 1) + "px");
 			$("#new_" + ev.target.className + "_left").val((ui.position.left - 1) + "px");
 		}
