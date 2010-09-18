@@ -19,9 +19,10 @@ MyApp.defaultData = {
 MyApp.get = function(callback){
 	var os = MyOpenSocial;
 	var withDefault = function(obj, key, defaultVal){
-		//return((obj === undefined || obj[key] === undefined || obj[key] === null || obj[key] === "") ? defaultVal : obj[key]);
-		return((kuma.isBlank(obj) || kuma.isBlank(obj[key])) ? defaultVal : obj[key]);
+		return((kuma.isNull(obj) || kuma.isBlank(obj[key])) ? defaultVal : obj[key]);
 	};
+
+	console.log("getting keys = " + kuma.keys(this.defaultData));
 
 	os.get({
 		viewer: os.viewer,
