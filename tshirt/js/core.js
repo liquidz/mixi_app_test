@@ -7,7 +7,8 @@ MyApp.defaultData = {
 	tshirt_name: null,
 	tshirt_number: "X",
 	tshirt_color: "#04c",
-	tshirt_word_color: "#fff",
+	tshirt_name_color: "#fff",
+	tshirt_number_color: "#fff",
 	tshirt_name_size: "17px",
 	tshirt_number_size: "60px",
 	tshirt_name_top: "40px",
@@ -25,21 +26,13 @@ MyApp.get = function(callback){
 	os.get({
 		viewer: os.viewer,
 		owner: os.owner,
-		//response: os.data.apply(this, [os.owner].concat(kuma.keys(this.defaultData)))
 		response: os.data(os.owner, kuma.keys(this.defaultData))
-//		os.data(os.owner, "tshirt_image", "tshirt_name", "tshirt_number",
-//			"tshirt_color", "tshirt_word_color", "tshirt_name_size", "tshirt_number_size",
-//			"tshirt_name_top", "tshirt_number_top")
 	}, kuma.scope(this, function(res){
 		var data = res.response[res.owner.getId()];
 		var getData = kuma.fold(this.defaultData, {}, function(k, v, r){
 			r[k] = withDefault(data, k, v);
 			return r;
 		});
-//		var getData = {};
-//		for(var k in MyApp.defaultData){
-//			getData[k] = withDefault(data, k, MyApp.defaultData[k])
-//		}
 		getData.tshirt_name = withDefault(data, "tshirt_name", res.owner.getDisplayName());
 		getData.viewer = res.viewer;
 		getData.owner = res.owner;
@@ -52,14 +45,15 @@ MyApp.set = function(data){
 	DD_belatedPNG.fix(".iepngfix");
 	$("#tshirt").css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")");
 	$("#tshirt").css("background-color", data.tshirt_color);
-	$("#tshirt p").css("color", data.tshirt_word_color);
 	$("#tshirt p.tshirt_name")
 		.html(data.tshirt_name)
+		.css("color", data.tshirt_name_color)
 		.css("font-size", data.tshirt_name_size)
 		.css("top", (parseInt(data.tshirt_name_top) - 1) + "px") // - border:1
 		.css("left", (parseInt(data.tshirt_name_left) - 1) + "px"); // - border:1
 	$("#tshirt p.tshirt_number")
 		.html(data.tshirt_number)
+		.css("color", data.tshirt_number_color)
 		.css("font-size", data.tshirt_number_size)
 		.css("top", (parseInt(data.tshirt_number_top) - 1) + "px") // - border:1
 		.css("left", (parseInt(data.tshirt_number_left) - 1) + "px"); // - border:1

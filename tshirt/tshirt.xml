@@ -26,6 +26,7 @@
 			<p class="tshirt_name"></p>
 			<p class="tshirt_number"></p>
 		</div>
+		<p>※ドラッグ＆ドロップで移動できます</p>
 
 		<div id="change_form">
 			<fieldset>
@@ -33,7 +34,8 @@
 				<p>name: <input type="text" id="new_tshirt_name" class="text" /></p>
 				<p>number: <input type="text" id="new_tshirt_number" class="text" /></p>
 				<p>tshirt color: <input type="text" id="new_tshirt_color" class="color" /></p>
-				<p>tshirt word color: <input type="text" id="new_tshirt_word_color" class="color" /></p>
+				<p>tshirt name color: <input type="text" id="new_tshirt_name_color" class="color" /></p>
+				<p>tshirt number color: <input type="text" id="new_tshirt_number_color" class="color" /></p>
 				<p>tshirt name size: <input type="slider" id="new_tshirt_name_size" class="slider" /></p>
 				<p>tshirt number size: <input type="slider" id="new_tshirt_number_size" class="slider" /></p>
 				<p>tshirt name top: <input type="text" id="new_tshirt_name_top" class="text" /></p>
