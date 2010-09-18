@@ -30,7 +30,7 @@ MyApp.get = function(callback){
 //		os.data(os.owner, "tshirt_image", "tshirt_name", "tshirt_number",
 //			"tshirt_color", "tshirt_word_color", "tshirt_name_size", "tshirt_number_size",
 //			"tshirt_name_top", "tshirt_number_top")
-	}, function(res){
+	}, kuma.scope(this, function(res){
 		var data = res.response[res.owner.getId()];
 		var getData = kuma.fold(this.defaultData, {}, function(k, v, r){
 			r[k] = withDefault(data, k, v);
@@ -46,7 +46,7 @@ MyApp.get = function(callback){
 		getData.owner = res.owner;
 
 		callback(getData);
-	});
+	}));
 };
 
 MyApp.set = function(data){
