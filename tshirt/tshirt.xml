@@ -31,7 +31,7 @@
 			</div>
 			<p>※ドラッグ＆ドロップで移動できます</p>
 
-			<div id="hoge">
+			<div id="hoge" class="tshirt_small">
 				<p class="tshirt_name"></p>
 				<p class="tshirt_number"></p>
 			</div>
