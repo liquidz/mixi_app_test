@@ -64,10 +64,9 @@ MyApp.setSmall = function(selector, data){
 	if(target.length === 0){ return false; }
 
 	DD_belatedPNG.fix(".iepngfix");
-	target.css("background-image", "url(" + this.url + "img/small/" + data.tshirt_image + ")");
 	target
-		.css("background-color", data.tshirt_color)
-		.css("width", "95px").css("height", "95px");
+		.css("background-image", "url(" + this.url + "img/small/" + data.tshirt_image + ")")
+		.css("background-color", data.tshirt_color);
 	$(selector + " p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)

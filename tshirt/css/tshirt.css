@@ -1,4 +1,4 @@
-#tshirt, #tshirt p { margin: 0; padding: 0; font-weight: bold; }
+#tshirt, .tshirt_small #tshirt p, .tshirt_small p { margin: 0; padding: 0; font-weight: bold; }
 
 #tshirt {
 	width: 190px;
@@ -8,7 +8,13 @@
 	position: relative;
 }
 
-#tshirt p {
+.tshirt_small {
+	width: 95px;
+	height: 95px;
+	position: relative;
+}
+
+#tshirt p, .tshirt_small p {
 	display: inline;
 	position: absolute;
 }
