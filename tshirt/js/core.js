@@ -65,7 +65,9 @@ MyApp.setSmall = function(selector, data){
 
 	DD_belatedPNG.fix(".iepngfix");
 	target.css("background-image", "url(" + this.url + "img/small/" + data.tshirt_image + ")");
-	target.css("background-color", data.tshirt_color);
+	target
+		.css("background-color", data.tshirt_color)
+		.css("width", "95px").css("height", "95px");
 	$(selector + " p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
