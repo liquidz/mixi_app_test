@@ -30,8 +30,13 @@
 				<p class="tshirt_number"></p>
 			</div>
 			<p>※ドラッグ＆ドロップで移動できます</p>
+
+			<div id="hoge">
+				<p class="tshirt_name"></p>
+				<p class="tshirt_number"></p>
+			</div>
 		</div>
-	
+
 		<div id="change_form">
 			<fieldset>
 				<legend>設定の変更</legend>

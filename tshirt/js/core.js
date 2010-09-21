@@ -176,6 +176,9 @@ MyApp.bindEvents = function(){
 MyApp.init = function(){
 	this.get(kuma.scope(this, function(res){
 		this.set(res);
+
+		this.setSmall("#hoge", res);
+
 		gadgets.window.adjustHeight();
 
 		if(res.viewer.getId() === res.owner.getId()){
