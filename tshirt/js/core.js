@@ -155,7 +155,7 @@ MyApp.bindEvents = function(){
 			$("#new_" + klass + "_left").val((ui.position.left - 1) + "px");
 		}
 	});
-	$("input.slider").slider({from: 1, to: 100, step: 1, dimension: "px", onstatechange: function(val){
+	$("input.slider").slider({from: 1, to: 200, step: 1, dimension: "px", onstatechange: function(val){
 		var target = (this.inputNode[0].id === "new_tshirt_name_size") ? ".tshirt_name" : ".tshirt_number";
 		$("#tshirt " + target).css("font-size", val + "px");
 	}});
