@@ -24,36 +24,48 @@
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/edit.css" />
 
-		<div id="tshirt" class="iepngfix">
-			<p class="tshirt_name"></p>
-			<p class="tshirt_number"></p>
+		<div id="main">
+			<div id="tshirt" class="iepngfix">
+				<p class="tshirt_name"></p>
+				<p class="tshirt_number"></p>
+			</div>
+			<p>※ドラッグ＆ドロップで移動できます</p>
 		</div>
-		<p>※ドラッグ＆ドロップで移動できます</p>
-
+	
 		<div id="change_form">
 			<fieldset>
-				<legend>change setting</legend>
-				<p>name: <input type="text" id="new_tshirt_name" class="text" /></p>
-				<p>number: <input type="text" id="new_tshirt_number" class="text" /></p>
-				<p>tshirt color: <input type="text" id="new_tshirt_color" class="color" /></p>
-				<p>tshirt name color: <input type="text" id="new_tshirt_name_color" class="color" /></p>
-				<p>tshirt number color: <input type="text" id="new_tshirt_number_color" class="color" /></p>
-				<p>tshirt name size: <input type="slider" id="new_tshirt_name_size" class="slider" /></p>
-				<p>tshirt number size: <input type="slider" id="new_tshirt_number_size" class="slider" /></p>
-				<p>tshirt name top: <input type="text" id="new_tshirt_name_top" class="text" /></p>
-				<p>tshirt name left: <input type="text" id="new_tshirt_name_left" class="text" /></p>
-				<p>tshirt number top: <input type="text" id="new_tshirt_number_top" class="text" /></p>
-				<p>tshirt number left: <input type="text" id="new_tshirt_number_left" class="text" /></p>
-				<select id="new_tshirt_image">
-					<option value="tshirt.png">default</option>
-					<option value="baby.png">baby</option>
-					<option value="penguin.png">penguin</option>
-					<option value="cat.png">cat</option>
-				</select>
-				<p><button id="save_setting">save</button></p>
-				<p><button id="reset_setting">reset</button></p>
+				<legend>設定の変更</legend>
+				<p>種類:
+					<select id="new_tshirt_image">
+						<option value="tshirt.png">ユニフォーム</option>
+						<option value="baby.png">赤ちゃん</option>
+						<option value="penguin.png">ペンギン</option>
+						<option value="cat.png">猫</option>
+					</select>
+					色: <input type="text" id="new_tshirt_color" class="color" />
+				</p>
+				<p>名前:
+					<input type="text" id="new_tshirt_name" class="text" />
+					文字色: <input type="text" id="new_tshirt_name_color" class="color" />
+					位置: <input type="text" id="new_tshirt_name_top" class="text pos" /> ,
+					<input type="text" id="new_tshirt_name_left" class="text pos" />
+				</p>
+				<p class="slider_parent"><input type="slider" id="new_tshirt_name_size" class="slider" value="0" /></p>
+				<p>番号:
+					<input type="text" id="new_tshirt_number" class="text" />
+					文字色: <input type="text" id="new_tshirt_number_color" class="color" />
+					位置: <input type="text" id="new_tshirt_number_top" class="text pos" /> ,
+					<input type="text" id="new_tshirt_number_left" class="text pos" />
+				</p>
+				<p class="slider_parent"><input type="slider" id="new_tshirt_number_size" class="slider" value="0" /></p>
+	
+				<p class="buttons">
+					<button id="reset_setting">リセット</button>
+					-
+					<button id="save_setting">保存</button>
+				</p>
 			</fieldset>
-
+	
 			<button id="invite">マイミクを招待</button>
 			<button id="activity">背番号の変更を通知</button>
 		</div>

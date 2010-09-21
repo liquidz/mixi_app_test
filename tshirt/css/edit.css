@@ -5,3 +5,29 @@
 #tshirt p:hover {
 	border: 1px solid #fff;
 }
+
+#change_form {
+	width: 500px;
+}
+
+#change_form p {
+	margin: 0; padding: 0;
+	line-height: 110%;
+}
+
+#change_form input[type=text] {
+	border: 1px solid #aaa;
+	width: 7em;
+}
+#change_form input.color {
+	background: transparent url(color.png) no-repeat 4px 50%;
+	padding-left: 20px;
+	width: 7em;
+}
+#change_form input.pos {
+	width: 2.5em;
+}
+#change_form p.slider_parent {
+	margin: 10px 0 5px 50px;
+}
+#change_form p.buttons {  margin-top: 10px; }
