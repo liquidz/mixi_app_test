@@ -6,6 +6,7 @@
 		<Require feature="dynamic-height" />
 	</ModulePrefs>
 
+	<!-- =canvas {{{ -->
 	<Content type="html" view="canvas">
 		<![CDATA[
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/jquery-1.4.2.min.js"></script>
@@ -58,8 +59,9 @@
 		</div>
 		]]>
 	</Content>
+	<!-- }}} -->
 
-	<Content type="html" view="home,profile">
+	<Content type="html" view="profile">
 		<![CDATA[
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/kuma.js"></script>
@@ -72,6 +74,22 @@
 			<p class="tshirt_name"></p>
 			<p class="tshirt_number"></p>
 		</div>
+		]]>
+	</Content>
+
+	<Content type="html" view="home">
+		<![CDATA[
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/kuma.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/com/js/myopensocial.js"></script>
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/DD_belatedPNG_0.0.8a-min.js"></script>
+		<!--
+		<script type="text/javascript" src="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/js/core.js"></script>
+		-->
+
+		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/tshirt.css" />
+
+		<div id="tshirt_list"></div>
 		]]>
 	</Content>
 </Module>
