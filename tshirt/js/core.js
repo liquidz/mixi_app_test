@@ -70,15 +70,15 @@ MyApp.setSmall = function(selector, data){
 	$(selector + " p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
-		.css("font-size", data.tshirt_name_size / 2)
-		.css("top", ((parseInt(data.tshirt_name_top) / 2) - 1) + "px") // - border:1
-		.css("left", ((parseInt(data.tshirt_name_left) / 2) - 1) + "px"); // - border:1
+		.css("font-size", data.tshirt_name_size / 3)
+		.css("top", ((parseInt(data.tshirt_name_top) / 3) - 1) + "px") // - border:1
+		.css("left", ((parseInt(data.tshirt_name_left) / 3) - 1) + "px"); // - border:1
 	$(selector + " p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
-		.css("font-size", data.tshirt_number_size / 2)
-		.css("top", ((parseInt(data.tshirt_number_top) / 2) - 1) + "px") // - border:1
-		.css("left", ((parseInt(data.tshirt_number_left) / 2) - 1) + "px"); // - border:1
+		.css("font-size", data.tshirt_number_size / 3)
+		.css("top", ((parseInt(data.tshirt_number_top) / 3) - 1) + "px") // - border:1
+		.css("left", ((parseInt(data.tshirt_number_left) / 3) - 1) + "px"); // - border:1
 
 	return true;
 }
