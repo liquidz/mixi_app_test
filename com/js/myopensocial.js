@@ -39,10 +39,10 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 
 MyOpenSocial.get = function(mapping, callback){
 	this.sendRequest(kuma.scope(this, function(req, key, val){
-		if(val === this.viewer || val === this.owner){
-			return req.newFetchPersonRequest(val);
-		} else if($.isFunction(val)){
+		if($.isFunction(val)){
 			return val(req);
+		} else {
+			return req.newFetchPersonRequest(val);
 		}
 	}), mapping, callback);
 };

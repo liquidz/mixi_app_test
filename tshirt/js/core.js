@@ -1,112 +1,24 @@
-var MyApp = {};
+if(!window.TShirt){ TShirt = {}; }
 
-MyApp.url = "http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/";
-
-MyApp.defaultData = {
-	tshirt_image: "tshirt.png",
-	tshirt_name: null,
-	tshirt_number: "X",
-	tshirt_color: "#04c",
-	tshirt_name_color: "#fff",
-	tshirt_number_color: "#fff",
-	tshirt_name_size: "17px",
-	tshirt_number_size: "60px",
-	tshirt_name_top: "40px",
-	tshirt_name_left: "55px",
-	tshirt_number_top: "60px",
-	tshirt_number_left: "75px"
-};
-
-MyApp.get = function(callback){
-	var os = MyOpenSocial;
-	var withDefault = function(obj, key, defaultVal){
-		return((kuma.isNull(obj) || kuma.isBlank(obj[key])) ? defaultVal : obj[key]);
-	};
-
-	os.get({
-		viewer: os.viewer,
-		owner: os.owner,
-		response: os.data(os.owner, kuma.keys(this.defaultData))
-	}, kuma.scope(this, function(res){
-		var data = res.response[res.owner.getId()];
-		var getData = kuma.fold(this.defaultData, {}, function(k, v, r){
-			r[k] = withDefault(data, k, v);
-			return r;
-		});
-		getData.tshirt_name = withDefault(data, "tshirt_name", res.owner.getDisplayName());
-		getData.viewer = res.viewer;
-		getData.owner = res.owner;
-
-		callback(getData);
-	}));
-};
-
-MyApp.set = function(data){
-	DD_belatedPNG.fix(".iepngfix");
-	$("#tshirt").css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")");
-	$("#tshirt").css("background-color", data.tshirt_color);
-	$("#tshirt p.tshirt_name")
-		.html(data.tshirt_name)
-		.css("color", data.tshirt_name_color)
-		.css("font-size", data.tshirt_name_size)
-		.css("top", (parseInt(data.tshirt_name_top) - 1) + "px") // - border:1
-		.css("left", (parseInt(data.tshirt_name_left) - 1) + "px"); // - border:1
-	$("#tshirt p.tshirt_number")
-		.html(data.tshirt_number)
-		.css("color", data.tshirt_number_color)
-		.css("font-size", data.tshirt_number_size)
-		.css("top", (parseInt(data.tshirt_number_top) - 1) + "px") // - border:1
-		.css("left", (parseInt(data.tshirt_number_left) - 1) + "px"); // - border:1
-};
-
-MyApp.setSmall = function(selector, data){
-	var target = $(selector);
-	if(target.length === 0){ return false; }
-
-	DD_belatedPNG.fix(".iepngfix");
-	target
-		.css("background-image", "url(" + this.url + "img/small/" + data.tshirt_image + ")")
-		.css("background-color", data.tshirt_color);
-	$(selector + " p.tshirt_name")
-		.html(data.tshirt_name)
-		.css("color", data.tshirt_name_color)
-		.css("font-size", data.tshirt_name_size / 3)
-		.css("top", ((parseInt(data.tshirt_name_top) / 3) - 1) + "px") // - border:1
-		.css("left", ((parseInt(data.tshirt_name_left) / 3) - 1) + "px"); // - border:1
-	$(selector + " p.tshirt_number")
-		.html(data.tshirt_number)
-		.css("color", data.tshirt_number_color)
-		.css("font-size", data.tshirt_number_size / 3)
-		.css("top", ((parseInt(data.tshirt_number_top) / 3) - 1) + "px") // - border:1
-		.css("left", ((parseInt(data.tshirt_number_left) / 3) - 1) + "px"); // - border:1
-
-	return true;
-}
-
-MyApp.previewSetting = function(){
+TShirt.previewSetting = function(){
 	var data = kuma.map(this.defaultData, function(key){
 		return $("#new_" + key).val();
 	});
 	this.set(data);
 };
 
-MyApp.saveSetting = function(){
+TShirt.saveSetting = function(){
 	if(confirm("do you really save this setting?")){
 		var newData = kuma.map(this.defaultData, function(k){
 			return $("#new_" + k).val();
 		});
-//		var newData = {};
-//		for(var key in this.defaultData){
-//			newData[key] = $("#new_" + key).val();
-//			if(newData[key] === ""){ return false; }
-//		}
 		MyOpenSocial.set(newData, function(){
 			this.set(newData);
 		});
 	}
 };
 
-MyApp.resetSetting = function(){
+TShirt.resetSetting = function(){
 	if(confirm("reset?")){
 		var os = MyOpenSocial;
 		os.get({viewer: os.viewer}, kuma.scope(this, function(res){
@@ -123,14 +35,13 @@ MyApp.resetSetting = function(){
 	}
 };
 
-MyApp.bindEvents = function(){
+TShirt.bindEvents = function(){
 	$("#save_setting").bind("click", kuma.scope(this, this.saveSetting));
 	$("#reset_setting").bind("click", kuma.scope(this, this.resetSetting));
 	$("#new_tshirt_image").bind("change", kuma.scope(this, function(event){
 		$("#tshirt").css("background-image", "url("+ this.url +"img/" + $(event.target).val() + ")");
 	}));
 	$(".color").each(function(){
-//		var self = this;
 		$(this).ColorPicker({
 			color: $(this).val(),
 			onShow: function(cp){ $(cp).fadeIn(250); },
@@ -174,14 +85,8 @@ MyApp.bindEvents = function(){
 	});
 };
 
-MyApp.init = function(){
-	this.get(kuma.scope(this, function(res){
-		this.set(res);
-
-		this.setSmall("#hoge", res);
-
-		gadgets.window.adjustHeight();
-
+$(function(){
+	TShirt.get(TShirt, function(res){
 		if(res.viewer.getId() === res.owner.getId()){
 			for(var k in res){
 				var e = $("#new_" + k);
@@ -191,12 +96,8 @@ MyApp.init = function(){
 
 			this.bindEvents();
 
-		} else {
-			$("#change_form").hide();
+			$("#change_form").show();
 		}
-	}));
-};
+	});
+});
 
-(function(){
-	gadgets.util.registerOnLoadHandler(kuma.scope(MyApp, MyApp.init));
-})();
