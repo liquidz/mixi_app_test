@@ -152,7 +152,7 @@ TShirt.bindEvents = function(){
 		container: "#tshirt",
 		drag: function(ev, ui){
 			var klass = ev.target.className.split(" ")[0];
-			$("#new_" + klass + "_top").val(this.unit(ui.position.top - 1)));
+			$("#new_" + klass + "_top").val(this.unit(ui.position.top - 1));
 			$("#new_" + klass + "_left").val(this.unit(ui.position.left - 1));
 		}
 	});
