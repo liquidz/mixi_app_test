@@ -86,9 +86,14 @@ TShirt.bindEvents = function(){
 };
 
 $(function(){
-	TShirt.get(kuma.scope(TShirt, function(res){
+	var os = MyOpenSocial;
+	os.get({
+		owner: os.owner,
+		viewer: os.viewer,
+		response: os.data(os.owner, kuma.keys(this.defaultData))
+	}, kuma.scope(TShirt, function(res){
 		if(res.viewer.getId() === res.owner.getId()){
-			for(var k in res){
+			for(var k in res.response){
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
 				e.val(res[k]);
