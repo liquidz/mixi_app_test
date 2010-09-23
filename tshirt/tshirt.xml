@@ -25,16 +25,22 @@
 		<link rel="stylesheet" type="text/css" href="http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/css/edit.css" />
 
 		<div id="main">
-			<div id="tshirt" class="iepngfix">
-				<p class="tshirt_name"></p>
-				<p class="tshirt_number"></p>
-			</div>
-			<p>※ドラッグ＆ドロップで移動できます</p>
+			<fieldset>
+				<legend>編集</legend>
+				<div id="tshirt" class="iepngfix">
+					<p class="tshirt_name"></p>
+					<p class="tshirt_number"></p>
+				</div>
+				<p>※ドラッグ＆ドロップで移動できます</p>
+			</fieldset>
 
-			<div id="hoge" class="tshirt_small">
-				<p class="tshirt_name"></p>
-				<p class="tshirt_number"></p>
-			</div>
+			<fieldset>
+				<legend>縮小プレビュー</legend>
+				<div id="small_preview" class="tshirt_small">
+					<p class="tshirt_name"></p>
+					<p class="tshirt_number"></p>
+				</div>
+			</fieldset>
 		</div>
 
 		<div id="change_form">

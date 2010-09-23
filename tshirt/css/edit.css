@@ -6,6 +6,9 @@
 	border: 1px solid #fff;
 }
 
+#main { overflow: hidden; }
+#main fieldset { float: left; margin-right: 20px; }
+
 #change_form {
 	width: 500px;
 }

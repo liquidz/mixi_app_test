@@ -99,7 +99,7 @@ TShirt.previewSetting = function(opt_target){
 	});
 
 	if(target === "all" || target === "normal"){ this.set(data); }
-	if(target === "all" || target === "small"){ this.setSmall("#hoge", data); }
+	if(target === "all" || target === "small"){ this.setSmall("#small_preview", data); }
 };
 
 TShirt.saveSetting = function(){
@@ -197,7 +197,7 @@ TShirt.bindEvents = function(){
 TShirt.init = function(){
 	this.get(kuma.scope(this, function(res){
 		this.set(res);
-		this.setSmall("#hoge", res);
+		this.setSmall("#small_preview", res);
 
 		gadgets.window.adjustHeight();
 
