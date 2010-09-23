@@ -93,7 +93,7 @@ TShirt.setSmall = function(selector, data){
 };
 
 TShirt.previewSetting = function(opt_target){
-	var target = (kuma.isBlank(opt_target)) ? "all" : opt_target;
+	var target = (kuma.isBlank(opt_target)) ? "all" : ((kuma.isString(opt_target) ? opt_target : "all");
 	var data = kuma.map(this.defaultData, function(key){
 		return $("#new_" + key).val();
 	});
