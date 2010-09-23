@@ -14,7 +14,7 @@ kuma.isBlank = function(obj){ return (this.isNull(obj) || obj === ""); };
 kuma.isCollection = function(obj){ return (this.isArray(obj) || this.isObject(obj)); };
 
 kuma.foreach = function(obj, fn){ // {{{
-	if(!this.isFunction(obj)){ console.log("aba " + toString.call(obj));return false; }
+	if(!this.isFunction(fn)){ console.log("aba " + toString.call(obj));return false; }
 	if(this.isArray(obj)){
 		for(var i = 0, l = obj.length; i < l; ++i){
 			var res = fn.apply(fn, [obj[i], i]);
