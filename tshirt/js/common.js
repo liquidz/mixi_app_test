@@ -186,7 +186,8 @@ TShirt.init = function(){
 
 		if(res.viewer.getId() === res.owner.getId()){
 			console.log("this is owner");
-			for(var k in res.response){
+			for(var k in this.defaultData){
+				console.log("setting " + k);
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
 				e.val(this.unit(res.response[k]));
