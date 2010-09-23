@@ -104,7 +104,7 @@ TShirt.saveSetting = function(){
 			return $("#new_" + k).val();
 		});
 		MyOpenSocial.set(newData, function(){
-			this.set(newData);
+			TShirt.set(newData);
 		});
 	}
 };
