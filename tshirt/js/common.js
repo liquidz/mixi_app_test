@@ -120,7 +120,7 @@ TShirt.resetSetting = function(){
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
 				//e.val(data[k].replace(/\s*px\s*/, ""));
-				if(k.indexOf("size") !== -1 || k.indexOf("top") !== -1 || k.indexOf("left") !== -1){
+				if(k.indexOf("top") !== -1 || k.indexOf("left") !== -1){
 					e.val(this.unit(data[k]));
 				} else {
 					e.val(data[k]);
@@ -194,7 +194,7 @@ TShirt.init = function(){
 				console.log("setting " + k);
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
-				if(k.indexOf("size") !== -1 || k.indexOf("top") !== -1 || k.indexOf("left") !== -1){
+				if(k.indexOf("top") !== -1 || k.indexOf("left") !== -1){
 					e.val(this.unit(res[k]));
 				} else {
 					e.val(res[k]);
