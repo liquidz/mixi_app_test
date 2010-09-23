@@ -92,12 +92,14 @@ TShirt.setSmall = function(selector, data){
 	return true;
 };
 
-TShirt.previewSetting = function(){
+TShirt.previewSetting = function(opt_target){
+	var target = (kuma.isBlank(opt_target)) ? "all" : opt_target;
 	var data = kuma.map(this.defaultData, function(key){
 		return $("#new_" + key).val();
 	});
-	this.set(data);
-	this.setSmall(data);
+
+	if(target === "all" || target === "normal"){ this.set(data); }
+	if(target === "all" || target === "small"){ this.setSmall(data); }
 };
 
 TShirt.saveSetting = function(){
@@ -170,12 +172,13 @@ TShirt.bindEvents = function(){
 			$("#new_" + klass + "_left").val(TShirt.unit(ui.position.left + 1));
 			//$("#new_" + klass + "_left").val(ui.position.left + 1);
 
-			TShirt.previewSetting();
+			TShirt.previewSetting("small");
 		}
 	});
 	$("input.slider").slider({from: 1, to: 200, step: 1, dimension: "px", onstatechange: function(val){
 		var target = (this.inputNode[0].id === "new_tshirt_name_size") ? ".tshirt_name" : ".tshirt_number";
 		$("#tshirt " + target).css("font-size", TShirt.unit(val));
+		TShirt.previewSetting("small");
 	}});
 	$("#invite").bind("click", function(){
 		MyOpenSocial.invite(function(res){
