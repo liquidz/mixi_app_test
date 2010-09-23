@@ -185,10 +185,11 @@ TShirt.init = function(){
 		gadgets.window.adjustHeight();
 
 		if(res.viewer.getId() === res.owner.getId()){
+			console.log("this is owner");
 			for(var k in res.response){
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
-				e.val(res[k]);
+				e.val(this.unit(res.response[k]));
 			};
 
 			this.bindEvents();
