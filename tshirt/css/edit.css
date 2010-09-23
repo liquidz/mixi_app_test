@@ -6,7 +6,7 @@
 	border: 1px solid #fff;
 }
 
-#main { overflow: hidden; }
+#main { overflow: hidden; margin-bottom: 10px; }
 #main fieldset { float: left; margin-right: 20px; }
 
 #change_form {
