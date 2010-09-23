@@ -86,7 +86,7 @@ TShirt.bindEvents = function(){
 };
 
 $(function(){
-	TShirt.get(TShirt, function(res){
+	TShirt.get(kuma.scope(TShirt, function(res){
 		if(res.viewer.getId() === res.owner.getId()){
 			for(var k in res){
 				var e = $("#new_" + k);
@@ -98,6 +98,6 @@ $(function(){
 
 			$("#change_form").show();
 		}
-	});
+	}));
 });
 
