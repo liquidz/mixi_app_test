@@ -99,7 +99,7 @@ TShirt.previewSetting = function(opt_target){
 	});
 
 	if(target === "all" || target === "normal"){ this.set(data); }
-	if(target === "all" || target === "small"){ this.setSmall(data); }
+	if(target === "all" || target === "small"){ this.setSmall("#hoge", data); }
 };
 
 TShirt.saveSetting = function(){
