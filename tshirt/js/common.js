@@ -33,7 +33,7 @@ TShirt.get = function(callback, opt_id){
 		//response: os.data(os.owner, kuma.keys(this.defaultData))
 		response: os.data(targetUser, kuma.keys(this.defaultData))
 	}, kuma.scope(this, function(res){
-		console.dir(res);
+		console.log(res);
 		var data = res.response[res.owner.getId()];
 		var getData = kuma.fold(this.defaultData, {}, function(k, v, r){
 			r[k] = withDefault(data, k, v);

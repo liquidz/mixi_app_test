@@ -5,6 +5,7 @@ kuma.checkTypeFn = function(type){
 };
 
 kuma.isArray = kuma.checkTypeFn("[object Array]");
+kuma.isString = kuma.checkTypeFn("[object String]");
 kuma.isFunction = kuma.checkTypeFn("[object Function]");
 kuma.isObject = kuma.checkTypeFn("[object Object]");
 

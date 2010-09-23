@@ -27,11 +27,7 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 
 MyOpenSocial.get = function(mapping, callback){
 	this.sendRequest(kuma.scope(this, function(req, key, val){
-		if($.isFunction(val)){
-			return val(req);
-		} else {
-			return req.newFetchPersonRequest(val);
-		}
+		return((kuma.isString(val)) ? req.newFetchPersonRequest(val) : val(req));
 	}), mapping, callback);
 };
 
