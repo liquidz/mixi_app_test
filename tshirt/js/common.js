@@ -190,7 +190,7 @@ TShirt.init = function(){
 				console.log("setting " + k);
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
-				e.val(this.unit(res.response[k]));
+				e.val(this.unit(res[k]));
 			};
 
 			this.bindEvents();
