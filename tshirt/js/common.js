@@ -45,14 +45,17 @@ TShirt.get = function(callback, opt_id){
 };
 
 TShirt.set = function(data){
-	DD_belatedPNG.fix(".iepngfix");
+	//DD_belatedPNG.fix(".iepngfix");
 
 	kuma.foreach(data, function(k, v){
 		console.log("  > " + k + " = " + v);
 	});
 
-	$("#tshirt").css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")");
-	$("#tshirt").css("background-color", data.tshirt_color);
+	$("#tshirt")
+		.css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")")
+		.css("background-color", data.tshirt_color);
+
+	console.log(">>" + data.tshirt_name_size + "px");
 	$("#tshirt p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
