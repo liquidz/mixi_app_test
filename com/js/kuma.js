@@ -23,7 +23,7 @@ kuma.foreach = function(obj, fn){ // {{{
 		}
 	} else if(this.isObject(obj)){
 		for(var key in obj){
-			var res = fn.apply(fn, [obj[key], key]);
+			var res = fn.apply(fn, [key, obj[key]]);
 			if(res === false){ break; }
 			else if(res === true){ continue; }
 		}
