@@ -51,7 +51,7 @@ TShirt.set = function(data){
 	$("#tshirt p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
-		.css("font-size", data.tshirt_name_size)
+		.css("font-size", data.tshirt_name_size + "px")
 		.css("top", (parseInt(data.tshirt_name_top) - 1) + "px") // - border:1
 		.css("left", (parseInt(data.tshirt_name_left) - 1) + "px"); // - border:1
 	$("#tshirt p.tshirt_number")
@@ -72,16 +72,16 @@ TShirt.setSmall = function(selector, data){
 		.css("background-color", data.tshirt_color);
 	$(selector + " p.tshirt_name")
 		.html(data.tshirt_name)
-		.css("color", data.tshirt_name_color)
+		.css("color", data.tshirt_name_color + "px")
 		.css("font-size", data.tshirt_name_size / 3)
-		.css("top", ((parseInt(data.tshirt_name_top) / 3) - 1) + "px") // - border:1
-		.css("left", ((parseInt(data.tshirt_name_left) / 3) - 1) + "px"); // - border:1
+		.css("top", (parseInt(data.tshirt_name_top) / 3) + "px")
+		.css("left", (parseInt(data.tshirt_name_left) / 3) + "px");
 	$(selector + " p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
 		.css("font-size", data.tshirt_number_size / 3)
-		.css("top", ((parseInt(data.tshirt_number_top) / 3) - 1) + "px") // - border:1
-		.css("left", ((parseInt(data.tshirt_number_left) / 3) - 1) + "px"); // - border:1
+		.css("top", (parseInt(data.tshirt_number_top) / 3) + "px")
+		.css("left", (parseInt(data.tshirt_number_left) / 3) + "px");
 
 	return true;
 };
@@ -89,7 +89,6 @@ TShirt.setSmall = function(selector, data){
 TShirt.init = function(){
 	this.get(kuma.scope(this, function(res){
 		this.set(res);
-
 		this.setSmall("#hoge", res);
 
 		gadgets.window.adjustHeight();
