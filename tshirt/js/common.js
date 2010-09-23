@@ -163,6 +163,7 @@ TShirt.bindEvents = function(){
 	$("#tshirt p").draggable({
 		container: "#tshirt",
 		drag: function(ev, ui){
+			console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
 			var klass = ev.target.className.split(" ")[0];
 			//$("#new_" + klass + "_top").val(TShirt.unit(ui.position.top + 1));
 			$("#new_" + klass + "_top").val(ui.position.top + 1);
