@@ -24,6 +24,8 @@ TShirt.get = function(callback, opt_id){
 	};
 	var targetUser = (kuma.isBlank(opt_id)) ? os.owner : opt_id;
 
+	console.dir(targetUser);
+
 	os.get({
 		viewer: os.viewer,
 		owner: os.owner,
