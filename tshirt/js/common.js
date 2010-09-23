@@ -152,13 +152,13 @@ TShirt.bindEvents = function(){
 		container: "#tshirt",
 		drag: function(ev, ui){
 			var klass = ev.target.className.split(" ")[0];
-			$("#new_" + klass + "_top").val(this.unit(ui.position.top - 1));
-			$("#new_" + klass + "_left").val(this.unit(ui.position.left - 1));
+			$("#new_" + klass + "_top").val(TShirt.unit(ui.position.top - 1));
+			$("#new_" + klass + "_left").val(TShirt.unit(ui.position.left - 1));
 		}
 	});
 	$("input.slider").slider({from: 1, to: 200, step: 1, dimension: "px", onstatechange: function(val){
 		var target = (this.inputNode[0].id === "new_tshirt_name_size") ? ".tshirt_name" : ".tshirt_number";
-		$("#tshirt " + target).css("font-size", this.unit(val));
+		$("#tshirt " + target).css("font-size", TShirt.unit(val));
 	}});
 	$("#invite").bind("click", function(){
 		MyOpenSocial.invite(function(res){
