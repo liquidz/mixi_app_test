@@ -7,9 +7,9 @@ TShirt.defaultData = {
 	tshirt_image: "tshirt.png",
 	tshirt_name: null,
 	tshirt_number: "X",
-	tshirt_color: "#04c",
-	tshirt_name_color: "#fff",
-	tshirt_number_color: "#fff",
+	tshirt_color: "#0044cc",
+	tshirt_name_color: "#ffffff",
+	tshirt_number_color: "#ffffff",
 	tshirt_name_size: "17",
 	tshirt_number_size: "60",
 	tshirt_name_top: "40",
@@ -191,6 +191,15 @@ TShirt.bindEvents = function(){
 	});
 	$("#activity").bind("click", function(){
 		MyOpenSocial.sendActivity("hogehoge");
+	});
+
+	$("#profile_view").bind("click", function(){
+		var view = gadgets.views.getSupportedViews()["profile"];
+		gadgets.views.requestNavigateTo(view);
+	});
+	$("#home_view").bind("click", function(){
+		var view = gadgets.views.getSupportedViews()["home"];
+		gadgets.views.requestNavigateTo(view);
 	});
 };
 

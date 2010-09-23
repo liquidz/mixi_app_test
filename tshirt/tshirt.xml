@@ -4,6 +4,7 @@
 	<ModulePrefs title="uniform">
 		<Require feature="opensocial-0.8" />
 		<Require feature="dynamic-height" />
+		<Require feature="views" />
 	</ModulePrefs>
 
 	<!-- =canvas {{{ -->
@@ -49,9 +50,11 @@
 				<p>種類:
 					<select id="new_tshirt_image">
 						<option value="tshirt.png">ユニフォーム</option>
+						<!--
 						<option value="baby.png">赤ちゃん</option>
 						<option value="penguin.png">ペンギン</option>
 						<option value="cat.png">猫</option>
+						-->
 					</select>
 					色: <input type="text" id="new_tshirt_color" class="color" />
 				</p>
@@ -79,6 +82,9 @@
 	
 			<button id="invite">マイミクを招待</button>
 			<button id="activity">背番号の変更を通知</button>
+
+			<button id="profile_view">profile</button>
+			<button id="home_view">home</button>
 		</div>
 		]]>
 	</Content>
