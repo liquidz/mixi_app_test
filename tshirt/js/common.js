@@ -46,6 +46,11 @@ TShirt.get = function(callback, opt_id){
 
 TShirt.set = function(data){
 	DD_belatedPNG.fix(".iepngfix");
+
+	kuma.foreach(data, function(k, v){
+		console.log("  > " + k + " = " + v);
+	});
+
 	$("#tshirt").css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")");
 	$("#tshirt").css("background-color", data.tshirt_color);
 	$("#tshirt p.tshirt_name")
