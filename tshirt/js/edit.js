@@ -86,6 +86,7 @@ TShirt.bindEvents = function(){
 };
 
 $(kuma.scope(TShirt, function(){
+	kuma.foreach(this.defaultMap, function(k){ console.log("  > " + k); });
 	var os = MyOpenSocial;
 	os.get({
 		owner: os.owner,
