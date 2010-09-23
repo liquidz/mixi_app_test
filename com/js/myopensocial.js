@@ -19,13 +19,7 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 		request.add(conv(request, key, mapping[key]), key);
 	}
 	return request.send(function(data){
-		if($.isFunction(callback)){
-			console.log("mapping = " + mapping);
-			for(var key in mapping){
-//			kuma.foreach(mapping, function(key){
-				console.log("  > " + key + " = " + data.get(key).getData());
-//			});
-			}
+		if(kuma.isFunction(callback)){
 			callback(kuma.map(mapping, function(key){ return data.get(key).getData(); }));
 		}
 	});
@@ -49,7 +43,7 @@ MyOpenSocial.setObject = function(mapping, callback){
 };
 
 MyOpenSocial.invite = function(callback){
-	var cb = (kuma.isNull(callback) || !$.isFunction(callback)) ? function(){} : callback;
+	var cb = (kuma.isNull(callback) || !kuma.isFunction(callback)) ? function(){} : callback;
 	opensocial.requestShareApp("VIEWER_FRIENDS", null, cb);
 };
 
