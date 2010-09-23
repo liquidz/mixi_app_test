@@ -119,7 +119,8 @@ TShirt.resetSetting = function(){
 			for(var k in data){
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
-				e.val(data[k].replace(/\s*px\s*/, ""));
+				//e.val(data[k].replace(/\s*px\s*/, ""));
+				e.val(this.unit(data[k]));
 			};
 			this.set(data);
 		}));
