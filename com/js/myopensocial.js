@@ -20,15 +20,18 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 	}
 	return request.send(function(data){
 		if($.isFunction(callback)){
+			kuma.foreach(mapping, function(key){
+				console.log("  > " + key + " = " + data.get(key).getData());
+			});
 			callback(kuma.map(mapping, function(key){ return data.get(key).getData(); }));
 		}
 	});
 };
 
 MyOpenSocial.get = function(mapping, callback){
-	this.sendRequest(kuma.scope(this, function(req, key, val){
+	this.sendRequest(function(req, key, val){
 		return((kuma.isString(val)) ? req.newFetchPersonRequest(val) : val(req));
-	}), mapping, callback);
+	}, mapping, callback);
 };
 
 MyOpenSocial.set = function(mapping, callback){
