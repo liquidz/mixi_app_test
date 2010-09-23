@@ -9,12 +9,12 @@ TShirt.defaultData = {
 	tshirt_color: "#04c",
 	tshirt_name_color: "#fff",
 	tshirt_number_color: "#fff",
-	tshirt_name_size: "17px",
-	tshirt_number_size: "60px",
-	tshirt_name_top: "40px",
-	tshirt_name_left: "55px",
-	tshirt_number_top: "60px",
-	tshirt_number_left: "75px"
+	tshirt_name_size: "17",
+	tshirt_number_size: "60",
+	tshirt_name_top: "40",
+	tshirt_name_left: "55",
+	tshirt_number_top: "60",
+	tshirt_number_left: "75"
 };
 
 TShirt.get = function(callback, opt_id){
@@ -44,24 +44,25 @@ TShirt.get = function(callback, opt_id){
 	}));
 };
 
+TShirt.unit = function(val){ return(((val + "").indexOf("px") !== -1) ? val : val + "px"); };
+
 TShirt.set = function(data){
 	$("#tshirt")
 		.css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")")
 		.css("background-color", data.tshirt_color);
 
-	console.log(">>" + data.tshirt_name_size + "px");
 	$("#tshirt p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
-		.css("font-size", data.tshirt_name_size)
-		.css("top", (parseInt(data.tshirt_name_top) - 1) + "px") // - border:1
-		.css("left", (parseInt(data.tshirt_name_left) - 1) + "px"); // - border:1
+		.css("font-size", this.unit(data.tshirt_name_size))
+		.css("top", this.unit(parseInt(data.tshirt_name_top) - 1)) // - border:1
+		.css("left", this.unit(parseInt(data.tshirt_name_left) - 1)); // - border:1
 	$("#tshirt p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
-		.css("font-size", data.tshirt_number_size)
-		.css("top", (parseInt(data.tshirt_number_top) - 1) + "px") // - border:1
-		.css("left", (parseInt(data.tshirt_number_left) - 1) + "px"); // - border:1
+		.css("font-size", this.unit(data.tshirt_number_size))
+		.css("top", this.unit(parseInt(data.tshirt_number_top) - 1)) // - border:1
+		.css("left", this.unit(parseInt(data.tshirt_number_left) - 1)); // - border:1
 };
 
 TShirt.setSmall = function(selector, data){
@@ -75,15 +76,15 @@ TShirt.setSmall = function(selector, data){
 	$(selector + " p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
-		.css("font-size", data.tshirt_name_size / 3)
-		.css("top", (parseInt(data.tshirt_name_top) / 3) + "px")
-		.css("left", (parseInt(data.tshirt_name_left) / 3) + "px");
+		.css("font-size", this.unit(data.tshirt_name_size / 3))
+		.css("top", this.unit(parseInt(data.tshirt_name_top) / 3))
+		.css("left", this.unit(parseInt(data.tshirt_name_left) / 3));
 	$(selector + " p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
-		.css("font-size", data.tshirt_number_size / 3)
-		.css("top", (parseInt(data.tshirt_number_top) / 3) + "px")
-		.css("left", (parseInt(data.tshirt_number_left) / 3) + "px");
+		.css("font-size", this.unit(data.tshirt_number_size / 3))
+		.css("top", this.unit(parseInt(data.tshirt_number_top) / 3))
+		.css("left", this.unit(parseInt(data.tshirt_number_left) / 3));
 
 	return true;
 };
@@ -151,13 +152,13 @@ TShirt.bindEvents = function(){
 		container: "#tshirt",
 		drag: function(ev, ui){
 			var klass = ev.target.className.split(" ")[0];
-			$("#new_" + klass + "_top").val((ui.position.top - 1) + "px");
-			$("#new_" + klass + "_left").val((ui.position.left - 1) + "px");
+			$("#new_" + klass + "_top").val(this.unit(ui.position.top - 1)));
+			$("#new_" + klass + "_left").val(this.unit(ui.position.left - 1));
 		}
 	});
 	$("input.slider").slider({from: 1, to: 200, step: 1, dimension: "px", onstatechange: function(val){
 		var target = (this.inputNode[0].id === "new_tshirt_name_size") ? ".tshirt_name" : ".tshirt_number";
-		$("#tshirt " + target).css("font-size", val + "px");
+		$("#tshirt " + target).css("font-size", this.unit(val));
 	}});
 	$("#invite").bind("click", function(){
 		MyOpenSocial.invite(function(res){
