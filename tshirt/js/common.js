@@ -57,14 +57,18 @@ TShirt.set = function(data){
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
 		.css("font-size", this.unit(data.tshirt_name_size))
-		.css("top", this.unit(parseInt(data.tshirt_name_top) - 1)) // - border:1
-		.css("left", this.unit(parseInt(data.tshirt_name_left) - 1)); // - border:1
+		//.css("top", this.unit(parseInt(data.tshirt_name_top) - 1)) // - border:1
+		.css("top", this.unit(parseInt(data.tshirt_name_top))) // - border:1
+		//.css("left", this.unit(parseInt(data.tshirt_name_left) - 1)); // - border:1
+		.css("left", this.unit(parseInt(data.tshirt_name_left))); // - border:1
 	$("#tshirt p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
 		.css("font-size", this.unit(data.tshirt_number_size))
-		.css("top", this.unit(parseInt(data.tshirt_number_top) - 1)) // - border:1
-		.css("left", this.unit(parseInt(data.tshirt_number_left) - 1)); // - border:1
+		//.css("top", this.unit(parseInt(data.tshirt_number_top) - 1)) // - border:1
+		.css("top", this.unit(parseInt(data.tshirt_number_top))) // - border:1
+		//.css("left", this.unit(parseInt(data.tshirt_number_left) - 1)); // - border:1
+		.css("left", this.unit(parseInt(data.tshirt_number_left))); // - border:1
 };
 
 TShirt.setSmall = function(selector, data){
