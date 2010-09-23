@@ -85,27 +85,27 @@ TShirt.bindEvents = function(){
 	});
 };
 
-$(kuma.scope(TShirt, function(){
-	console.log("kiteru??? " + TShirt.defaultMap);
-	kuma.foreach(this.defaultMap, function(k){ console.log("  > " + k); });
-	kuma.foreach(TShirt.defaultMap, function(k){ console.log("  +>+ " + k); });
-	var os = MyOpenSocial;
-	os.get({
-		owner: os.owner,
-		viewer: os.viewer,
-		response: os.data(os.owner, kuma.keys(this.defaultData))
-	}, kuma.scope(TShirt, function(res){
-		if(res.viewer.getId() === res.owner.getId()){
-			for(var k in res.response){
-				var e = $("#new_" + k);
-				if(e.length === 0){ continue; }
-				e.val(res[k]);
-			};
-
-			this.bindEvents();
-
-			$("#change_form").show();
-		}
-	}));
-}));
+//$(kuma.scope(TShirt, function(){
+//	console.log("kiteru??? " + TShirt.defaultMap);
+//	kuma.foreach(this.defaultMap, function(k){ console.log("  > " + k); });
+//	kuma.foreach(TShirt.defaultMap, function(k){ console.log("  +>+ " + k); });
+//	var os = MyOpenSocial;
+//	os.get({
+//		owner: os.owner,
+//		viewer: os.viewer,
+//		response: os.data(os.owner, kuma.keys(this.defaultData))
+//	}, kuma.scope(TShirt, function(res){
+//		if(res.viewer.getId() === res.owner.getId()){
+//			for(var k in res.response){
+//				var e = $("#new_" + k);
+//				if(e.length === 0){ continue; }
+//				e.val(res[k]);
+//			};
+//
+//			this.bindEvents();
+//
+//			$("#change_form").show();
+//		}
+//	}));
+//}));
 
