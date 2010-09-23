@@ -79,13 +79,13 @@ TShirt.setSmall = function(selector, data){
 	$(selector + " p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
-		.css("font-size", this.unit(data.tshirt_name_size / 3))
+		.css("font-size", this.unit(parseInt(data.tshirt_name_size) / 3))
 		.css("top", this.unit(parseInt(data.tshirt_name_top) / 3))
 		.css("left", this.unit(parseInt(data.tshirt_name_left) / 3));
 	$(selector + " p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
-		.css("font-size", this.unit(data.tshirt_number_size / 3))
+		.css("font-size", this.unit(parseInt(data.tshirt_number_size) / 3))
 		.css("top", this.unit(parseInt(data.tshirt_number_top) / 3))
 		.css("left", this.unit(parseInt(data.tshirt_number_left) / 3));
 
