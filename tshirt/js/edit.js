@@ -85,7 +85,7 @@ TShirt.bindEvents = function(){
 	});
 };
 
-$(function(){
+$(kuma.scope(TShirt, function(){
 	var os = MyOpenSocial;
 	os.get({
 		owner: os.owner,
@@ -104,5 +104,5 @@ $(function(){
 			$("#change_form").show();
 		}
 	}));
-});
+}));
 

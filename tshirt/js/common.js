@@ -24,16 +24,12 @@ TShirt.get = function(callback, opt_id){
 	};
 	var targetUser = (kuma.isBlank(opt_id)) ? os.owner : opt_id;
 
-	console.log(targetUser);
-
 	os.get({
 		viewer: os.viewer,
 		owner: os.owner,
 		target: targetUser,
-		//response: os.data(os.owner, kuma.keys(this.defaultData))
 		response: os.data(targetUser, kuma.keys(this.defaultData))
 	}, kuma.scope(this, function(res){
-		console.log(res);
 		var data = res.response[res.owner.getId()];
 		var getData = kuma.fold(this.defaultData, {}, function(k, v, r){
 			r[k] = withDefault(data, k, v);
