@@ -59,9 +59,9 @@ TShirt.set = function(data){
 	$("#tshirt p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
-		.css("font-size", data.tshirt_name_size + "px")
 		.css("top", (parseInt(data.tshirt_name_top) - 1) + "px") // - border:1
 		.css("left", (parseInt(data.tshirt_name_left) - 1) + "px"); // - border:1
+	$("#tshirt p.tshirt_name").css("font-size", data.tshirt_name_size + "px");
 	$("#tshirt p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
