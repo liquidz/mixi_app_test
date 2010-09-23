@@ -44,7 +44,10 @@ TShirt.get = function(callback, opt_id){
 	}));
 };
 
-TShirt.unit = function(val){ return(((val + "").indexOf("px") !== -1) ? val : val + "px"); };
+TShirt.unit = function(val){ 
+	console.log("unit = " + ((val + "").indexOf("px") !== -1) ? val : val + "px");
+	return(((val + "").indexOf("px") !== -1) ? val : val + "px");
+};
 
 TShirt.set = function(data){
 	$("#tshirt")
