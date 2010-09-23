@@ -21,6 +21,7 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 	return request.send(function(data){
 		console.log("oyoyo");
 		if($.isFunction(callback)){
+			console.log("mapping = " + mapping);
 			kuma.foreach(mapping, function(key){
 				console.log("  > " + key + " = " + data.get(key).getData());
 			});
