@@ -45,7 +45,7 @@ TShirt.get = function(callback, opt_id){
 };
 
 TShirt.unit = function(val){ 
-	console.log("unit = " + ((val + "").indexOf("px") !== -1) ? val : val + "px");
+	console.log("unit = " + (((val + "").indexOf("px") !== -1) ? val : val + "px"));
 	return(((val + "").indexOf("px") !== -1) ? val : val + "px");
 };
 
