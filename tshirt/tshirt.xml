@@ -52,15 +52,15 @@
 				<p>名前:
 					<input type="text" id="new_tshirt_name" class="text" />
 					文字色: <input type="text" id="new_tshirt_name_color" class="color" />
-					位置: <input type="text" id="new_tshirt_name_top" class="text pos" /> ,
-					<input type="text" id="new_tshirt_name_left" class="text pos" />
+					位置: <input type="text" id="new_tshirt_name_top" class="pos" /> ,
+					<input type="text" id="new_tshirt_name_left" class="pos" />
 				</p>
 				<p class="slider_parent"><input type="slider" id="new_tshirt_name_size" class="slider" value="0" /></p>
 				<p>番号:
 					<input type="text" id="new_tshirt_number" class="text" />
 					文字色: <input type="text" id="new_tshirt_number_color" class="color" />
-					位置: <input type="text" id="new_tshirt_number_top" class="text pos" /> ,
-					<input type="text" id="new_tshirt_number_left" class="text pos" />
+					位置: <input type="text" id="new_tshirt_number_top" class="pos" /> ,
+					<input type="text" id="new_tshirt_number_left" class="pos" />
 				</p>
 				<p class="slider_parent"><input type="slider" id="new_tshirt_number_size" class="slider" value="0" /></p>
 	
