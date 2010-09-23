@@ -81,7 +81,7 @@ TShirt.bindEvents = function(){
 		});
 	});
 	$("#activity").bind("click", function(){
-		MyOpenSocial.sendActivity("背番号が変更されました");
+		MyOpenSocial.sendActivity("hogehoge");
 	});
 };
 

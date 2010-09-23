@@ -100,6 +100,18 @@ TShirt.init = function(){
 		this.setSmall("#hoge", res);
 
 		gadgets.window.adjustHeight();
+
+//		if(res.viewer.getId() === res.owner.getId()){
+//			for(var k in res.response){
+//				var e = $("#new_" + k);
+//				if(e.length === 0){ continue; }
+//				e.val(res[k]);
+//			};
+//
+//			this.bindEvents();
+//
+//			$("#change_form").show();
+//		}
 	}));
 };
 
