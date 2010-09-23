@@ -1,6 +1,7 @@
 if(!window.TShirt){ TShirt = {}; }
 
 TShirt.url = "http://github.com/liquidz/mixi_app_test/raw/develop/tshirt/";
+TShirt.edit = false;
 
 TShirt.defaultData = {
 	tshirt_image: "tshirt.png",
@@ -57,18 +58,14 @@ TShirt.set = function(data){
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
 		.css("font-size", this.unit(data.tshirt_name_size))
-		//.css("top", this.unit(parseInt(data.tshirt_name_top) - 1)) // - border:1
-		.css("top", this.unit(parseInt(data.tshirt_name_top))) // - border:1
-		//.css("left", this.unit(parseInt(data.tshirt_name_left) - 1)); // - border:1
-		.css("left", this.unit(parseInt(data.tshirt_name_left))); // - border:1
+		.css("top", this.unit(parseInt(data.tshirt_name_top) - (this.edit ? 1 : 0))) // - border:1
+		.css("left", this.unit(parseInt(data.tshirt_name_left) - (this.edit ? 1 : 0))); // - border:1
 	$("#tshirt p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
 		.css("font-size", this.unit(data.tshirt_number_size))
-		//.css("top", this.unit(parseInt(data.tshirt_number_top) - 1)) // - border:1
-		.css("top", this.unit(parseInt(data.tshirt_number_top))) // - border:1
-		//.css("left", this.unit(parseInt(data.tshirt_number_left) - 1)); // - border:1
-		.css("left", this.unit(parseInt(data.tshirt_number_left))); // - border:1
+		.css("top", this.unit(parseInt(data.tshirt_number_top) - (this.edit ? 1 : 0))) // - border:1
+		.css("left", this.unit(parseInt(data.tshirt_number_left) - (this.edit ? 1 : 0))); // - border:1
 };
 
 TShirt.setSmall = function(selector, data){
@@ -105,7 +102,11 @@ TShirt.previewSetting = function(){
 TShirt.saveSetting = function(){
 	if(confirm("do you really save this setting?")){
 		var newData = kuma.map(this.defaultData, function(k){
-			return $("#new_" + k).val();
+			if(k.indexOf("top") !== -1 || k.indexOf("left") !== -1){
+				return(parseInt($("#new_" + k).val()) + 1);
+			} else {
+				return $("#new_" + k).val();
+			}
 		});
 		MyOpenSocial.set(newData, function(){
 			TShirt.set(newData);
@@ -193,9 +194,8 @@ TShirt.init = function(){
 		gadgets.window.adjustHeight();
 
 		if(res.viewer.getId() === res.owner.getId()){
-			console.log("this is owner");
+			this.edit = true;
 			for(var k in this.defaultData){
-				console.log("setting " + k);
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
 				if(k.indexOf("top") !== -1 || k.indexOf("left") !== -1){
