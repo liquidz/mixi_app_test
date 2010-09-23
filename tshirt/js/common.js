@@ -190,7 +190,11 @@ TShirt.init = function(){
 				console.log("setting " + k);
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
-				e.val(this.unit(res[k]));
+				if(k.indexOf("size") !== -1 || k.indexOf("top") !== -1 || k.indexOf("left") !== -1){
+					e.val(this.unit(res[k]));
+				} else {
+					e.val(res[k]);
+				}
 			};
 
 			this.bindEvents();
