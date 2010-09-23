@@ -45,7 +45,6 @@ TShirt.get = function(callback, opt_id){
 };
 
 TShirt.unit = function(val){ 
-	console.log("unit = " + (((val + "").indexOf("px") !== -1) ? val : val + "px"));
 	return(((val + "").indexOf("px") !== -1) ? val : val + "px");
 };
 
@@ -120,7 +119,7 @@ TShirt.resetSetting = function(){
 			for(var k in data){
 				var e = $("#new_" + k);
 				if(e.length === 0){ continue; }
-				e.val(data[k]);
+				e.val(data[k].replace(/\s*px\s*/, "");
 			};
 			this.set(data);
 		}));
@@ -155,8 +154,8 @@ TShirt.bindEvents = function(){
 		container: "#tshirt",
 		drag: function(ev, ui){
 			var klass = ev.target.className.split(" ")[0];
-			$("#new_" + klass + "_top").val(TShirt.unit(ui.position.top - 1));
-			$("#new_" + klass + "_left").val(TShirt.unit(ui.position.left - 1));
+			$("#new_" + klass + "_top").val(ui.position.top - 1);
+			$("#new_" + klass + "_left").val(ui.position.left - 1);
 		}
 	});
 	$("input.slider").slider({from: 1, to: 200, step: 1, dimension: "px", onstatechange: function(val){
