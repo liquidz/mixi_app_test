@@ -174,7 +174,7 @@ TShirt.bindEvents = function(){
 
 			TShirt.previewSetting("small");
 		}
-	});
+	}).css("position", "absolute");
 	$("input.slider").slider({from: 1, to: 200, step: 1, dimension: "px", onstatechange: function(val){
 		var target = (this.inputNode[0].id === "new_tshirt_name_size") ? ".tshirt_name" : ".tshirt_number";
 		$("#tshirt " + target).css("font-size", TShirt.unit(val));
