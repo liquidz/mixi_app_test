@@ -19,11 +19,14 @@ MyOpenSocial.sendRequest = function(conv, mapping, callback){
 		request.add(conv(request, key, mapping[key]), key);
 	}
 	return request.send(function(data){
+		console.log("oyoyo");
 		if($.isFunction(callback)){
 			kuma.foreach(mapping, function(key){
 				console.log("  > " + key + " = " + data.get(key).getData());
 			});
 			callback(kuma.map(mapping, function(key){ return data.get(key).getData(); }));
+		} else {
+			console.log("arere...");
 		}
 	});
 };
