@@ -164,8 +164,10 @@ TShirt.bindEvents = function(){
 		container: "#tshirt",
 		drag: function(ev, ui){
 			var klass = ev.target.className.split(" ")[0];
-			$("#new_" + klass + "_top").val(TShirt.unit(ui.position.top + 1));
-			$("#new_" + klass + "_left").val(TShirt.unit(ui.position.left + 1));
+			//$("#new_" + klass + "_top").val(TShirt.unit(ui.position.top + 1));
+			$("#new_" + klass + "_top").val(ui.position.top + 1);
+			//$("#new_" + klass + "_left").val(TShirt.unit(ui.position.left + 1));
+			$("#new_" + klass + "_left").val(ui.position.left + 1);
 		}
 	});
 	$("input.slider").slider({from: 1, to: 200, step: 1, dimension: "px", onstatechange: function(val){
