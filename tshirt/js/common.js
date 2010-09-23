@@ -45,12 +45,6 @@ TShirt.get = function(callback, opt_id){
 };
 
 TShirt.set = function(data){
-	//DD_belatedPNG.fix(".iepngfix");
-
-	kuma.foreach(data, function(k, v){
-		console.log("  > " + k + " = " + v);
-	});
-
 	$("#tshirt")
 		.css("background-image", "url(" + this.url + "img/" + data.tshirt_image + ")")
 		.css("background-color", data.tshirt_color);
@@ -59,9 +53,9 @@ TShirt.set = function(data){
 	$("#tshirt p.tshirt_name")
 		.html(data.tshirt_name)
 		.css("color", data.tshirt_name_color)
+		.css("font-size", data.tshirt_name_size)
 		.css("top", (parseInt(data.tshirt_name_top) - 1) + "px") // - border:1
 		.css("left", (parseInt(data.tshirt_name_left) - 1) + "px"); // - border:1
-	$("#tshirt p.tshirt_name").css("font-size", data.tshirt_name_size + "px");
 	$("#tshirt p.tshirt_number")
 		.html(data.tshirt_number)
 		.css("color", data.tshirt_number_color)
@@ -80,7 +74,7 @@ TShirt.setSmall = function(selector, data){
 		.css("background-color", data.tshirt_color);
 	$(selector + " p.tshirt_name")
 		.html(data.tshirt_name)
-		.css("color", data.tshirt_name_color + "px")
+		.css("color", data.tshirt_name_color)
 		.css("font-size", data.tshirt_name_size / 3)
 		.css("top", (parseInt(data.tshirt_name_top) / 3) + "px")
 		.css("left", (parseInt(data.tshirt_name_left) / 3) + "px");
